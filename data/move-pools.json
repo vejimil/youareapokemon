@@ -1,0 +1,30 @@
+{
+  "byType": {
+    "Normal": ["Quick Attack", "Swift", "Endure", "Hyper Voice"],
+    "Fire": ["Ember", "Flame Charge", "Mystical Fire", "Heat Wave"],
+    "Water": ["Water Pulse", "Bubble Beam", "Aqua Jet", "Surf"],
+    "Electric": ["Thunder Shock", "Spark", "Charge Beam", "Thunderbolt"],
+    "Grass": ["Magical Leaf", "Razor Leaf", "Giga Drain", "Seed Bomb"],
+    "Ice": ["Powder Snow", "Icy Wind", "Ice Beam", "Freeze-Dry"],
+    "Fighting": ["Double Kick", "Brick Break", "Drain Punch", "Close Combat"],
+    "Poison": ["Acid Spray", "Poison Jab", "Venoshock", "Sludge Bomb"],
+    "Ground": ["Mud Shot", "Bulldoze", "Stomping Tantrum", "Earth Power"],
+    "Flying": ["Gust", "Air Cutter", "Aerial Ace", "Air Slash"],
+    "Psychic": ["Confusion", "Psybeam", "Calm Mind", "Psychic"],
+    "Bug": ["Struggle Bug", "Bug Bite", "Silver Wind", "X-Scissor"],
+    "Rock": ["Rock Throw", "Rock Tomb", "Power Gem", "Stone Edge"],
+    "Ghost": ["Astonish", "Hex", "Shadow Sneak", "Shadow Ball"],
+    "Dragon": ["Twister", "Dragon Breath", "Dragon Pulse", "Draco Meteor"],
+    "Dark": ["Bite", "Assurance", "Night Slash", "Dark Pulse"],
+    "Steel": ["Metal Claw", "Mirror Shot", "Flash Cannon", "Iron Head"],
+    "Fairy": ["Fairy Wind", "Draining Kiss", "Moonblast", "Dazzling Gleam"]
+  },
+  "common": ["Protect", "Facade", "Substitute", "Rest"],
+  "tags": {
+    "fast": ["Agility", "Tailwind", "Extreme Speed"],
+    "support": ["Helping Hand", "Light Screen", "Heal Pulse"],
+    "shadowy": ["Confuse Ray", "Disable", "Phantom Force"],
+    "physical": ["Swords Dance", "U-turn", "Body Slam"],
+    "special": ["Nasty Plot", "Stored Power", "Tri Attack"]
+  }
+}

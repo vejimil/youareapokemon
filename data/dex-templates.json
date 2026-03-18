@@ -1,0 +1,36 @@
+{
+  "openers": [
+    "It quietly studies the feelings of the people around it before taking action.",
+    "It stores ambient energy in subtle shifts of expression and posture.",
+    "It reads a room in an instant, then reshapes its aura to match the moment.",
+    "It channels its mood into a visible elemental presence that changes in battle."
+  ],
+  "habits": {
+    "gentle": [
+      "When relaxed, it stays close to companions and mirrors their pace.",
+      "It prefers to guide others with soft signals rather than direct force.",
+      "It often watches quietly, then steps in with surprising care and timing.",
+      "Around trusted partners, it becomes far more expressive and playful."
+    ],
+    "mysterious": [
+      "It appears and disappears from crowded places without anyone noticing how it moved.",
+      "Witnesses say its presence lingers even after it has already slipped away.",
+      "It keeps its intentions hidden until the exact instant it decides to act.",
+      "Its aura changes subtly in low light, making its movements hard to predict."
+    ]
+  },
+  "battle": {
+    "fast": [
+      "bursts forward before opponents can settle into position.",
+      "turns small openings into a chain of rapid attacks.",
+      "moves with startling speed once its confidence rises.",
+      "leans on tempo and sharp reactions rather than brute force."
+    ],
+    "steady": [
+      "fights with patient timing and carefully measured force.",
+      "prefers to control the pace before committing to a decisive strike.",
+      "holds the field calmly until a clear advantage appears.",
+      "builds pressure little by little, then finishes with clean precision."
+    ]
+  }
+}

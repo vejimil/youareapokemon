@@ -1,0 +1,18 @@
+[
+  {"name":"Kindled Core","description":"Boosts output when emotions flare up.","tags":["energetic","warm","intense"],"types":["Fire","Dragon"]},
+  {"name":"Ripple Veil","description":"Softens incoming force with calm pressure.","tags":["cool","steady","elegant"],"types":["Water","Ice"]},
+  {"name":"Static Tempo","description":"Sharpens reactions after sudden movement.","tags":["energetic","curious"],"types":["Electric","Flying"]},
+  {"name":"Bloom Pulse","description":"Recovers poise while supporting allies.","tags":["friendly","steady","elegant"],"types":["Grass","Fairy"]},
+  {"name":"Inner Focus","description":"Keeps its aim steady under pressure.","tags":["steady","sharp","elegant"],"types":["Psychic","Steel"]},
+  {"name":"Shadow Thread","description":"Moves become harder to read in dim moments.","tags":["mysterious","sharp"],"types":["Ghost","Dark"]},
+  {"name":"Battle Rhythm","description":"Momentum builds with each successful strike.","tags":["energetic","intense"],"types":["Fighting","Fire"]},
+  {"name":"Crystal Guard","description":"Precision and symmetry reinforce defense.","tags":["steady","elegant","cool"],"types":["Ice","Steel","Rock"]},
+  {"name":"Toxic Insight","description":"Finds openings with patient, unsettling timing.","tags":["mysterious","steady","curious"],"types":["Poison","Psychic"]},
+  {"name":"Drift Step","description":"Glides around threats with airy control.","tags":["elegant","energetic"],"types":["Flying","Fairy"]},
+  {"name":"Rooted Will","description":"Holds firm and resists displacement.","tags":["steady","friendly"],"types":["Grass","Ground","Rock"]},
+  {"name":"Mirage Pulse","description":"Emotional shifts create confusing afterimages.","tags":["mysterious","warm","curious"],"types":["Fire","Ghost","Psychic"]},
+  {"name":"Volt Smile","description":"Friendly energy raises team tempo.","tags":["friendly","energetic"],"types":["Electric","Fairy","Normal"]},
+  {"name":"Silent Alloy","description":"Expressionless poise dampens disruption.","tags":["sharp","steady"],"types":["Steel","Dark"]},
+  {"name":"Prism Wing","description":"Refined movement bends light around its body.","tags":["elegant","curious","friendly"],"types":["Flying","Psychic","Fairy"]},
+  {"name":"Raw Resolve","description":"Pushes through fear with pure commitment.","tags":["intense","steady"],"types":["Normal","Fighting","Ground"]}
+]

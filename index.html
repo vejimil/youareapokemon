@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokésona Face Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Browser-only AI-inspired demo</p>
+        <h1>Pokésona Face Generator</h1>
+        <p class="hero-copy">
+          Upload a face photo, extract facial landmarks in the browser, and generate a
+          full monster profile with 18 possible elemental types, an ability, base stats,
+          a dex entry, and learnable moves.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel controls-panel">
+          <div class="panel-header">
+            <h2>1. Upload a face photo</h2>
+            <span class="badge">GitHub Pages friendly</span>
+          </div>
+
+          <label class="upload-zone" for="imageInput">
+            <input id="imageInput" type="file" accept="image/*" />
+            <span class="upload-title">Choose an image</span>
+            <span class="upload-subtitle">
+              Best results: one clear front-facing face, medium close-up, good lighting.
+            </span>
+          </label>
+
+          <div class="preview-wrap">
+            <img id="previewImage" alt="Uploaded preview" hidden />
+            <canvas id="overlayCanvas" hidden></canvas>
+            <div id="emptyPreview" class="empty-preview">Image preview will appear here.</div>
+          </div>
+
+          <div class="actions">
+            <button id="analyzeButton" class="primary-btn" disabled>Analyze face</button>
+            <button id="rerollButton" class="secondary-btn" disabled>Reroll flavor text</button>
+          </div>
+
+          <div id="statusMessage" class="status-message">
+            Load an image to begin.
+          </div>
+        </section>
+
+        <section class="panel result-panel">
+          <div class="panel-header">
+            <h2>2. Generated profile</h2>
+            <span id="modelStatus" class="badge muted">Model not loaded</span>
+          </div>
+
+          <div id="resultPlaceholder" class="result-placeholder">
+            Your generated profile will appear here after analysis.
+          </div>
+
+          <div id="resultContent" class="result-content" hidden>
+            <section class="monster-card">
+              <div class="monster-card__header">
+                <div>
+                  <p class="label">Generated species</p>
+                  <h3 id="speciesName">—</h3>
+                </div>
+                <div class="bst-wrap">
+                  <p class="label">Base stat total</p>
+                  <p id="bstValue" class="bst-value">000</p>
+                </div>
+              </div>
+
+              <div class="type-row">
+                <div>
+                  <p class="label">Type</p>
+                  <div id="typeBadges" class="type-badges"></div>
+                </div>
+                <div>
+                  <p class="label">Ability</p>
+                  <div id="abilityBox" class="ability-box"></div>
+                </div>
+              </div>
+
+              <div>
+                <p class="label">Pokédex entry</p>
+                <p id="dexEntry" class="dex-entry">—</p>
+              </div>
+            </section>
+
+            <section class="insight-grid">
+              <div class="sub-panel">
+                <h4>Detected vibe</h4>
+                <div id="traitChips" class="chips"></div>
+              </div>
+              <div class="sub-panel">
+                <h4>Why this result?</h4>
+                <ul id="reasonList" class="reason-list"></ul>
+              </div>
+            </section>
+
+            <section class="sub-panel">
+              <div class="sub-panel__header">
+                <h4>Base stats</h4>
+                <p id="archetypeText" class="subtle">—</p>
+              </div>
+              <div id="statRows" class="stats"></div>
+            </section>
+
+            <section class="sub-panel">
+              <div class="sub-panel__header">
+                <h4>Learnable moves</h4>
+                <p class="subtle">Generated from type + vibe tags</p>
+              </div>
+              <div id="moveChips" class="chips"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

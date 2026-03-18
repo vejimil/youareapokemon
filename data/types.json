@@ -1,0 +1,20 @@
+[
+  {"name":"Normal","color":"#9FA19F","reasonTemplate":"balanced facial cues suggested a neutral, adaptable profile"},
+  {"name":"Fire","color":"#E62829","reasonTemplate":"warmth and intensity suggested a hot, forceful profile"},
+  {"name":"Water","color":"#2980EF","reasonTemplate":"calm elegance and softer energy suggested a fluid profile"},
+  {"name":"Electric","color":"#FAC000","reasonTemplate":"high energy and alert openness suggested a crackling profile"},
+  {"name":"Grass","color":"#3FA129","reasonTemplate":"softness and brightness suggested a natural, nurturing profile"},
+  {"name":"Ice","color":"#3FD8FF","reasonTemplate":"cool tones and symmetry suggested a crisp, controlled profile"},
+  {"name":"Fighting","color":"#FF8000","reasonTemplate":"intensity and drive suggested a direct combat profile"},
+  {"name":"Poison","color":"#9141CB","reasonTemplate":"mystery and saturated contrast suggested a dangerous, sly profile"},
+  {"name":"Ground","color":"#915121","reasonTemplate":"steadiness and restraint suggested an earthy profile"},
+  {"name":"Flying","color":"#81B9EF","reasonTemplate":"open gaze and lifted elegance suggested an airy profile"},
+  {"name":"Psychic","color":"#EF4179","reasonTemplate":"curiosity and composed focus suggested a mental-energy profile"},
+  {"name":"Bug","color":"#91A119","reasonTemplate":"curiosity and restless detail suggested a quick, skittering profile"},
+  {"name":"Rock","color":"#AFA981","reasonTemplate":"stillness and sturdy symmetry suggested a hardened profile"},
+  {"name":"Ghost","color":"#704170","reasonTemplate":"mystery and low-brightness cues suggested a spectral profile"},
+  {"name":"Dragon","color":"#5060E1","reasonTemplate":"intensity and elegance together suggested a majestic profile"},
+  {"name":"Dark","color":"#624D4E","reasonTemplate":"sharpness and hidden emotion suggested a shadowy profile"},
+  {"name":"Steel","color":"#60A1B8","reasonTemplate":"symmetry and disciplined structure suggested a metallic profile"},
+  {"name":"Fairy","color":"#EF70EF","reasonTemplate":"friendliness and softness suggested a bright, whimsical profile"}
+]
