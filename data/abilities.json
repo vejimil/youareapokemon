@@ -1,208 +1,122 @@
 [
   {
-    "name": "타오르는 코어",
-    "description": "감정이 뜨거워질수록 힘이 강해집니다.",
-    "tags": [
-      "energetic",
-      "warm",
-      "intense"
-    ],
-    "types": [
-      "Fire",
-      "Dragon"
-    ]
+    "name": "맹화",
+    "description": "위기에 몰리면 불꽃 기술의 위력이 치솟는 특성이다.",
+    "tags": ["energetic", "warm", "intense"],
+    "types": ["Fire"]
   },
   {
-    "name": "물결 장막",
-    "description": "차분한 흐름으로 들어오는 힘을 흘려보냅니다.",
-    "tags": [
-      "cool",
-      "steady",
-      "elegant"
-    ],
-    "types": [
-      "Water",
-      "Ice"
-    ]
+    "name": "급류",
+    "description": "몰릴수록 물 기술이 거세지는 특성이다.",
+    "tags": ["cool", "steady", "elegant"],
+    "types": ["Water"]
   },
   {
-    "name": "정전기 리듬",
-    "description": "갑작스러운 움직임 뒤에 반응 속도가 날카로워집니다.",
-    "tags": [
-      "energetic",
-      "curious"
-    ],
-    "types": [
-      "Electric",
-      "Flying"
-    ]
+    "name": "심록",
+    "description": "막판에 풀 기술의 힘이 짙어지는 특성이다.",
+    "tags": ["friendly", "steady", "elegant"],
+    "types": ["Grass"]
   },
   {
-    "name": "블룸 펄스",
-    "description": "동료를 도우며 흐트러진 균형을 되찾습니다.",
-    "tags": [
-      "friendly",
-      "steady",
-      "elegant"
-    ],
-    "types": [
-      "Grass",
-      "Fairy"
-    ]
+    "name": "정전기",
+    "description": "몸에 모인 전류가 접촉한 상대를 마비시키기도 하는 특성이다.",
+    "tags": ["energetic", "curious"],
+    "types": ["Electric"]
   },
   {
-    "name": "내면 집중",
-    "description": "압박 속에서도 목표를 놓치지 않습니다.",
-    "tags": [
-      "steady",
-      "sharp",
-      "elegant"
-    ],
-    "types": [
-      "Psychic",
-      "Steel"
-    ]
+    "name": "위협",
+    "description": "등장만으로 상대의 기세를 꺾는 특성이다.",
+    "tags": ["intense", "sharp"],
+    "types": ["Dark", "Fighting"]
   },
   {
-    "name": "그림자 실",
-    "description": "어두운 순간일수록 움직임을 읽기 어려워집니다.",
-    "tags": [
-      "mysterious",
-      "sharp"
-    ],
-    "types": [
-      "Ghost",
-      "Dark"
-    ]
+    "name": "부유",
+    "description": "공중에 떠 있어 지면의 간섭을 받지 않는 특성이다.",
+    "tags": ["mysterious", "elegant", "curious"],
+    "types": ["Ghost", "Flying", "Psychic"]
   },
   {
-    "name": "배틀 리듬",
-    "description": "공격이 이어질수록 흐름이 가속됩니다.",
-    "tags": [
-      "energetic",
-      "intense"
-    ],
-    "types": [
-      "Fighting",
-      "Fire"
-    ]
+    "name": "프레셔",
+    "description": "숨 막히는 압박으로 상대의 움직임을 빠르게 소모시키는 특성이다.",
+    "tags": ["mysterious", "steady", "intense"],
+    "types": ["Ghost", "Dragon", "Dark"]
   },
   {
-    "name": "크리스털 가드",
-    "description": "정교함과 대칭감이 방어를 강화합니다.",
-    "tags": [
-      "steady",
-      "elegant",
-      "cool"
-    ],
-    "types": [
-      "Ice",
-      "Steel",
-      "Rock"
-    ]
+    "name": "옹골참",
+    "description": "한 번은 반드시 버텨 내는 단단함을 지닌 특성이다.",
+    "tags": ["steady", "sharp"],
+    "types": ["Rock", "Steel", "Ground"]
   },
   {
-    "name": "독의 통찰",
-    "description": "불안한 타이밍을 이용해 빈틈을 찾아냅니다.",
-    "tags": [
-      "mysterious",
-      "steady",
-      "curious"
-    ],
-    "types": [
-      "Poison",
-      "Psychic"
-    ]
+    "name": "재생력",
+    "description": "물러나며 체력을 추슬러 다시 흐름을 되찾는 특성이다.",
+    "tags": ["friendly", "steady", "cool"],
+    "types": ["Water", "Grass", "Poison"]
   },
   {
-    "name": "드리프트 스텝",
-    "description": "가벼운 흐름으로 위협을 미끄러지듯 피합니다.",
-    "tags": [
-      "elegant",
-      "energetic"
-    ],
-    "types": [
-      "Flying",
-      "Fairy"
-    ]
+    "name": "테크니션",
+    "description": "자잘한 기술도 날카롭게 다듬어 위력을 끌어올리는 특성이다.",
+    "tags": ["sharp", "curious", "energetic"],
+    "types": ["Bug", "Steel", "Normal"]
   },
   {
-    "name": "뿌리 내린 의지",
-    "description": "자리를 지키며 쉽게 밀려나지 않습니다.",
-    "tags": [
-      "steady",
-      "friendly"
-    ],
-    "types": [
-      "Grass",
-      "Ground",
-      "Rock"
-    ]
+    "name": "적응력",
+    "description": "자신의 타입과 맞는 기술을 유난히 깊게 끌어내는 특성이다.",
+    "tags": ["sharp", "intense", "elegant"],
+    "types": ["Normal", "Dragon", "Water"]
   },
   {
-    "name": "신기루 파동",
-    "description": "감정의 변화가 잔상을 남겨 상대를 혼란스럽게 합니다.",
-    "tags": [
-      "mysterious",
-      "warm",
-      "curious"
-    ],
-    "types": [
-      "Fire",
-      "Ghost",
-      "Psychic"
-    ]
+    "name": "클리어바디",
+    "description": "상대의 간섭에도 기세가 흐트러지지 않는 특성이다.",
+    "tags": ["steady", "cool", "elegant"],
+    "types": ["Steel", "Psychic", "Ice"]
   },
   {
-    "name": "볼트 스마일",
-    "description": "밝은 에너지로 팀의 흐름을 끌어올립니다.",
-    "tags": [
-      "friendly",
-      "energetic"
-    ],
-    "types": [
-      "Electric",
-      "Fairy",
-      "Normal"
-    ]
+    "name": "하늘의은총",
+    "description": "작은 행운이 뜻밖의 전개로 이어지기 쉬운 특성이다.",
+    "tags": ["friendly", "elegant", "curious"],
+    "types": ["Fairy", "Flying", "Normal"]
   },
   {
-    "name": "고요한 합금",
-    "description": "무표정한 침착함으로 방해를 줄입니다.",
-    "tags": [
-      "sharp",
-      "steady"
-    ],
-    "types": [
-      "Steel",
-      "Dark"
-    ]
+    "name": "멀티스케일",
+    "description": "온전한 상태에서는 받는 충격을 크게 줄이는 특성이다.",
+    "tags": ["elegant", "steady", "cool"],
+    "types": ["Dragon", "Flying"]
   },
   {
-    "name": "프리즘 윙",
-    "description": "정제된 움직임으로 몸 주변의 빛을 비틀어 냅니다.",
-    "tags": [
-      "elegant",
-      "curious",
-      "friendly"
-    ],
-    "types": [
-      "Flying",
-      "Psychic",
-      "Fairy"
-    ]
+    "name": "매직미러",
+    "description": "방해 기술을 되비춰 흐름을 뒤집는 특성이다.",
+    "tags": ["mysterious", "elegant", "curious"],
+    "types": ["Psychic", "Fairy"]
   },
   {
-    "name": "거친 결의",
-    "description": "두려움 속에서도 끝까지 밀어붙입니다.",
-    "tags": [
-      "intense",
-      "steady"
-    ],
-    "types": [
-      "Normal",
-      "Fighting",
-      "Ground"
-    ]
+    "name": "철가시",
+    "description": "건드린 상대가 그대로 상처를 입는 특성이다.",
+    "tags": ["sharp", "steady", "intense"],
+    "types": ["Steel", "Grass"]
+  },
+  {
+    "name": "까칠한피부",
+    "description": "맞붙은 상대를 거친 표면으로 긁어내는 특성이다.",
+    "tags": ["intense", "sharp"],
+    "types": ["Dragon", "Dark", "Ground"]
+  },
+  {
+    "name": "헤롱헤롱바디",
+    "description": "접촉한 상대를 잠시 흔들리게 만드는 특성이다.",
+    "tags": ["friendly", "soft", "elegant"],
+    "types": ["Fairy", "Normal"]
+  },
+  {
+    "name": "자기과신",
+    "description": "상대를 꺾을수록 공격성이 더 강해지는 특성이다.",
+    "tags": ["energetic", "intense"],
+    "types": ["Dark", "Fighting", "Fire"]
+  },
+  {
+    "name": "마이페이스",
+    "description": "혼란스러운 상황에서도 자기 리듬을 잃지 않는 특성이다.",
+    "tags": ["friendly", "steady", "soft"],
+    "types": ["Normal", "Psychic", "Fairy"]
   }
 ]

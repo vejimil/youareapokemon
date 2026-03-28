@@ -1,92 +1,20 @@
 [
-  {
-    "name": "Normal",
-    "color": "#9FA19F",
-    "reasonTemplate": "균형 잡힌 인상과 무난한 분위기가 잘 맞았습니다."
-  },
-  {
-    "name": "Fire",
-    "color": "#E62829",
-    "reasonTemplate": "따뜻한 색감과 강한 에너지가 잘 드러났습니다."
-  },
-  {
-    "name": "Water",
-    "color": "#2980EF",
-    "reasonTemplate": "차분한 분위기와 유연한 인상이 잘 어울렸습니다."
-  },
-  {
-    "name": "Electric",
-    "color": "#FAC000",
-    "reasonTemplate": "활발한 에너지와 또렷한 개방감이 두드러졌습니다."
-  },
-  {
-    "name": "Grass",
-    "color": "#3FA129",
-    "reasonTemplate": "부드럽고 안정적인 분위기가 잘 드러났습니다."
-  },
-  {
-    "name": "Ice",
-    "color": "#3FD8FF",
-    "reasonTemplate": "차가운 색감과 정돈된 인상이 잘 맞았습니다."
-  },
-  {
-    "name": "Fighting",
-    "color": "#FF8000",
-    "reasonTemplate": "강한 추진력과 직접적인 인상이 잘 나타났습니다."
-  },
-  {
-    "name": "Poison",
-    "color": "#9141CB",
-    "reasonTemplate": "묘한 분위기와 대비감이 위험한 느낌을 만들었습니다."
-  },
-  {
-    "name": "Ground",
-    "color": "#915121",
-    "reasonTemplate": "묵직하고 안정적인 인상이 잘 어울렸습니다."
-  },
-  {
-    "name": "Flying",
-    "color": "#81B9EF",
-    "reasonTemplate": "시선의 개방감과 가벼운 분위기가 잘 드러났습니다."
-  },
-  {
-    "name": "Psychic",
-    "color": "#EF4179",
-    "reasonTemplate": "호기심과 집중된 인상이 강하게 나타났습니다."
-  },
-  {
-    "name": "Bug",
-    "color": "#91A119",
-    "reasonTemplate": "호기심 많고 민감한 분위기가 잘 드러났습니다."
-  },
-  {
-    "name": "Rock",
-    "color": "#AFA981",
-    "reasonTemplate": "단단하고 흔들리지 않는 인상이 잘 맞았습니다."
-  },
-  {
-    "name": "Ghost",
-    "color": "#704170",
-    "reasonTemplate": "어두운 분위기와 신비로운 느낌이 강했습니다."
-  },
-  {
-    "name": "Dragon",
-    "color": "#5060E1",
-    "reasonTemplate": "강렬함과 우아함이 함께 느껴졌습니다."
-  },
-  {
-    "name": "Dark",
-    "color": "#624D4E",
-    "reasonTemplate": "날카롭고 숨겨진 감정선이 잘 드러났습니다."
-  },
-  {
-    "name": "Steel",
-    "color": "#60A1B8",
-    "reasonTemplate": "대칭감과 절제된 구조가 돋보였습니다."
-  },
-  {
-    "name": "Fairy",
-    "color": "#EF70EF",
-    "reasonTemplate": "친근하고 부드러운 분위기가 잘 어울렸습니다."
-  }
+  {"name":"Normal","color":"#9FA19F","reasonTemplate":"균형 잡힌 인상과 무난한 분위기가 잘 맞는 타입이다."},
+  {"name":"Fire","color":"#E62829","reasonTemplate":"따뜻한 색감과 강한 에너지가 두드러지는 타입이다."},
+  {"name":"Water","color":"#2980EF","reasonTemplate":"차분한 분위기와 유연한 인상이 어울리는 타입이다."},
+  {"name":"Electric","color":"#FAC000","reasonTemplate":"활발한 에너지와 또렷한 개방감이 강한 타입이다."},
+  {"name":"Grass","color":"#3FA129","reasonTemplate":"부드럽고 안정적인 분위기가 살아 있는 타입이다."},
+  {"name":"Ice","color":"#3FD8FF","reasonTemplate":"차가운 색감과 정돈된 인상이 강한 타입이다."},
+  {"name":"Fighting","color":"#FF8000","reasonTemplate":"강한 추진력과 직접적인 인상이 살아 있는 타입이다."},
+  {"name":"Poison","color":"#9141CB","reasonTemplate":"묘한 분위기와 대비감이 위험한 매력을 만드는 타입이다."},
+  {"name":"Ground","color":"#915121","reasonTemplate":"묵직하고 안정적인 인상이 어울리는 타입이다."},
+  {"name":"Flying","color":"#81B9EF","reasonTemplate":"시선의 개방감과 가벼운 분위기가 살아 있는 타입이다."},
+  {"name":"Psychic","color":"#EF4179","reasonTemplate":"호기심과 집중된 인상이 강하게 남는 타입이다."},
+  {"name":"Bug","color":"#91A119","reasonTemplate":"예민한 반응성과 호기심이 잘 드러나는 타입이다."},
+  {"name":"Rock","color":"#AFA981","reasonTemplate":"단단하고 흔들리지 않는 인상이 어울리는 타입이다."},
+  {"name":"Ghost","color":"#704170","reasonTemplate":"어두운 분위기와 신비로운 느낌이 강한 타입이다."},
+  {"name":"Dragon","color":"#5060E1","reasonTemplate":"강렬함과 우아함이 함께 느껴지는 타입이다."},
+  {"name":"Dark","color":"#624D4E","reasonTemplate":"날카롭고 숨겨진 감정선이 짙은 타입이다."},
+  {"name":"Steel","color":"#60A1B8","reasonTemplate":"대칭감과 절제된 구조가 돋보이는 타입이다."},
+  {"name":"Fairy","color":"#EF70EF","reasonTemplate":"친근하고 부드러운 분위기가 잘 살아나는 타입이다."}
 ]

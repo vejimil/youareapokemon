@@ -53,13 +53,13 @@ export function generateTypes(features, types) {
   const typeLookup = new Map(types.map((type) => [type.name, type]));
   const reasons = selected.map((typeName) => {
     const typeData = typeLookup.get(typeName);
-    return `${translateTypeName(typeName)}: ${typeData?.reasonTemplate ?? '가장 잘 맞는 분위기였습니다.'} (${round(scoreMap[typeName])})`;
+    return `${translateTypeName(typeName)}: ${typeData?.reasonTemplate ?? '가장 잘 맞는 분위기를 보인 타입이다.'} (${round(scoreMap[typeName])})`;
   });
 
-  if (s.energy > 0.62) reasons.push('에너지가 높아 빠르고 폭발적인 타입 쪽 점수가 올라갔습니다.');
-  if (s.mystery > 0.58) reasons.push('신비롭고 어두운 분위기가 숨겨진 느낌의 타입에 영향을 주었습니다.');
-  if (s.smile > 0.52) reasons.push('친근한 표정이 부드럽고 가벼운 타입 쪽 점수를 높였습니다.');
-  if (s.symmetry > 0.78) reasons.push('강한 대칭감이 정돈되고 절제된 타입 선택을 강화했습니다.');
+  if (s.energy > 0.62) reasons.push('에너지가 높아 빠르고 폭발적인 타입의 점수가 더 올라간 상태이다.');
+  if (s.mystery > 0.58) reasons.push('신비롭고 어두운 분위기가 숨겨진 느낌의 타입 선택에 영향을 준 상태이다.');
+  if (s.smile > 0.52) reasons.push('친근한 표정이 부드럽고 가벼운 타입의 점수를 끌어올린 상태이다.');
+  if (s.symmetry > 0.78) reasons.push('대칭감이 높아 정돈되고 절제된 타입 선택이 강화된 상태이다.');
 
   return {
     scoreMap,

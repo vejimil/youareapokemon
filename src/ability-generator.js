@@ -27,6 +27,9 @@ function scoreAbility(ability, features, selectedTypes) {
       case 'elegant':
         score += s.elegance * 1.0;
         break;
+      case 'soft':
+        score += s.softness * 0.95;
+        break;
       case 'steady':
         score += (1 - s.energy) * 0.55 + s.symmetry * 0.4;
         break;

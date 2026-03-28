@@ -9,11 +9,11 @@
   <body>
     <div class="page-shell">
       <header class="hero">
-        <p class="eyebrow">브라우저에서 실행되는 얼굴 분석 데모</p>
+        <p class="eyebrow">얼굴 사진 기반 포켓몬 프로필 생성기</p>
         <h1>포켓몬 얼굴 프로필 생성기</h1>
         <p class="hero-copy">
-          얼굴 사진을 올리면 브라우저에서 얼굴 특징을 분석해 타입, 특성, 종족값,
-          도감 설명, 기술까지 한 번에 생성해 줍니다.
+          얼굴 사진을 올리면 얼굴 특징을 분석해 타입, 특성, 종족값,
+          도감 설명, 기술을 한 번에 생성한다.
         </p>
       </header>
 
@@ -21,46 +21,39 @@
         <section class="panel controls-panel">
           <div class="panel-header">
             <h2>1. 얼굴 사진 업로드</h2>
-            <span class="badge">웹 배포 가능</span>
           </div>
 
           <label class="upload-zone" for="imageInput">
             <input id="imageInput" type="file" accept="image/*" />
             <span class="upload-title">이미지 선택</span>
             <span class="upload-subtitle">
-              정면에 가깝고 얼굴이 잘 보이는 사진이 가장 잘 분석됩니다.
+              정면에 가깝고 얼굴이 잘 보이는 사진일수록 분석 정확도가 높다.
             </span>
           </label>
 
           <div class="preview-wrap">
             <img id="previewImage" alt="업로드한 이미지 미리보기" hidden />
             <canvas id="overlayCanvas" hidden></canvas>
-            <div id="emptyPreview" class="empty-preview">여기에 이미지 미리보기가 표시됩니다.</div>
+            <div id="emptyPreview" class="empty-preview">여기에 이미지 미리보기가 표시된다.</div>
           </div>
 
-          <div class="actions">
+          <div class="actions actions--single">
             <button id="analyzeButton" class="primary-btn" disabled>얼굴 분석하기</button>
-            <button id="rerollButton" class="secondary-btn" disabled>설명 다시 생성</button>
-          </div>
-
-          <div class="actions utility-actions">
-            <button id="copySummaryButton" class="secondary-btn" disabled>요약 복사</button>
-            <button id="downloadProfileButton" class="secondary-btn" disabled>프로필 JSON 저장</button>
           </div>
 
           <div id="statusMessage" class="status-message">
-            이미지를 올리면 시작할 수 있습니다.
+            이미지를 올리면 분석을 시작할 수 있다.
           </div>
         </section>
 
         <section class="panel result-panel">
           <div class="panel-header">
             <h2>2. 생성 결과</h2>
-            <span id="modelStatus" class="badge muted">모델 로딩 전</span>
+            <span id="modelStatus" class="badge muted">모델 준비 전</span>
           </div>
 
           <div id="resultPlaceholder" class="result-placeholder">
-            분석이 끝나면 여기에 결과가 표시됩니다.
+            분석이 끝나면 여기에 결과가 표시된다.
           </div>
 
           <div id="resultContent" class="result-content" hidden>
@@ -89,11 +82,7 @@
               </div>
             </section>
 
-            <section class="insight-grid">
-              <div class="sub-panel">
-                <h4>분위기 태그</h4>
-                <div id="traitChips" class="chips"></div>
-              </div>
+            <section class="insight-grid insight-grid--single">
               <div class="sub-panel">
                 <h4>선정 이유</h4>
                 <ul id="reasonList" class="reason-list"></ul>
@@ -111,7 +100,6 @@
             <section class="sub-panel">
               <div class="sub-panel__header">
                 <h4>배울 수 있는 기술</h4>
-                
               </div>
               <div id="moveChips" class="chips"></div>
             </section>
@@ -119,7 +107,7 @@
             <section class="sub-panel">
               <div class="sub-panel__header">
                 <h4>얼굴 분석 지표</h4>
-                <p class="subtle">랜드마크와 표정 수치를 바탕으로 계산한 값</p>
+                <p class="subtle">얼굴 형태와 표정 수치를 바탕으로 계산한 값이다</p>
               </div>
               <div id="metricGrid" class="metric-grid"></div>
             </section>

@@ -565,3 +565,15 @@ input {
   gap: 12px;
   margin-bottom: 10px;
 }
+
+.actions--single {
+  justify-content: stretch;
+}
+
+.actions--single .primary-btn {
+  width: 100%;
+}
+
+.insight-grid--single {
+  grid-template-columns: 1fr;
+}
