@@ -12,6 +12,8 @@ const overlayCanvas = document.querySelector('#overlayCanvas');
 const emptyPreview = document.querySelector('#emptyPreview');
 const analyzeButton = document.querySelector('#analyzeButton');
 const rerollButton = document.querySelector('#rerollButton');
+const copySummaryButton = document.querySelector('#copySummaryButton');
+const downloadProfileButton = document.querySelector('#downloadProfileButton');
 const statusMessage = document.querySelector('#statusMessage');
 const modelStatus = document.querySelector('#modelStatus');
 const resultPlaceholder = document.querySelector('#resultPlaceholder');
@@ -27,6 +29,8 @@ const reasonList = document.querySelector('#reasonList');
 const archetypeText = document.querySelector('#archetypeText');
 const statRows = document.querySelector('#statRows');
 const moveChips = document.querySelector('#moveChips');
+const typeAffinityList = document.querySelector('#typeAffinityList');
+const metricGrid = document.querySelector('#metricGrid');
 
 const state = {
   data: null,
@@ -35,6 +39,17 @@ const state = {
   lastFeatures: null,
   lastProfile: null,
 };
+
+const metricConfig = [
+  ['energy', 'Energy'],
+  ['smile', 'Smile'],
+  ['mystery', 'Mystery'],
+  ['elegance', 'Elegance'],
+  ['intensity', 'Intensity'],
+  ['symmetry', 'Symmetry'],
+  ['warmth', 'Warmth'],
+  ['openness', 'Openness'],
+];
 
 init().catch((error) => {
   console.error(error);
@@ -74,9 +89,18 @@ imageInput.addEventListener('change', async (event) => {
   emptyPreview.hidden = true;
   rerollButton.disabled = true;
   analyzeButton.disabled = true;
+  copySummaryButton.disabled = true;
+  downloadProfileButton.disabled = true;
   clearResults();
 
-  await previewImage.decode();
+  try {
+    await previewImage.decode();
+  } catch (error) {
+    console.error(error);
+    setStatus('This image could not be decoded by the browser. Try a JPG or PNG file.', true);
+    return;
+  }
+
   fitCanvasToImage();
   clearCanvas();
 
@@ -89,6 +113,8 @@ analyzeButton.addEventListener('click', async () => {
 
   analyzeButton.disabled = true;
   rerollButton.disabled = true;
+  copySummaryButton.disabled = true;
+  downloadProfileButton.disabled = true;
   clearCanvas();
   setStatus('Analyzing face landmarks...', false);
 
@@ -138,11 +164,14 @@ analyzeButton.addEventListener('click', async () => {
       stats,
       moves,
       dex,
+      createdAt: new Date().toISOString(),
     };
 
     renderProfile(state.lastProfile, features, state.data.types);
     analyzeButton.disabled = false;
     rerollButton.disabled = false;
+    copySummaryButton.disabled = false;
+    downloadProfileButton.disabled = false;
     setStatus('Profile generated successfully.', false);
   } catch (error) {
     console.error(error);
@@ -165,6 +194,56 @@ rerollButton.addEventListener('click', () => {
 
   dexEntry.textContent = state.lastProfile.dex.text;
   setStatus('Flavor text rerolled.', false);
+});
+
+copySummaryButton.addEventListener('click', async () => {
+  if (!state.lastProfile || !state.lastFeatures) return;
+
+  const summary = buildTextSummary(state.lastProfile, state.lastFeatures);
+
+  try {
+    await navigator.clipboard.writeText(summary);
+    setStatus('Summary copied to clipboard.', false);
+  } catch (error) {
+    console.error(error);
+    setStatus('Clipboard copy failed in this browser context.', true);
+  }
+});
+
+downloadProfileButton.addEventListener('click', () => {
+  if (!state.lastProfile || !state.lastFeatures) return;
+
+  const payload = {
+    generatedAt: state.lastProfile.createdAt,
+    speciesName: state.lastProfile.name,
+    selectedTypes: state.lastProfile.typeResult.selected,
+    typeRanking: state.lastProfile.typeResult.ranked.map(([type, score]) => ({
+      type,
+      score: roundNumber(score, 4),
+    })),
+    ability: state.lastProfile.ability,
+    archetype: state.lastProfile.stats.archetype,
+    baseStats: state.lastProfile.stats.values,
+    baseStatTotal: state.lastProfile.stats.total,
+    traits: state.lastFeatures.traitLabels,
+    metrics: Object.fromEntries(
+      metricConfig.map(([key, label]) => [label, roundNumber(state.lastFeatures.scores[key] ?? 0, 4)]),
+    ),
+    moves: state.lastProfile.moves,
+    dexEntry: state.lastProfile.dex.text,
+  };
+
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  const safeName = state.lastProfile.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  link.href = url;
+  link.download = `${safeName || 'pokesona-profile'}.json`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  setStatus('Profile JSON downloaded.', false);
 });
 
 function renderProfile(profile, features, typeCatalog) {
@@ -226,6 +305,71 @@ function renderProfile(profile, features, typeCatalog) {
     chip.textContent = move;
     moveChips.appendChild(chip);
   });
+
+  renderTypeRanking(profile.typeResult, typeCatalog);
+  renderMetrics(features.scores);
+}
+
+function renderTypeRanking(typeResult, typeCatalog) {
+  typeAffinityList.innerHTML = '';
+  const typeLookup = new Map(typeCatalog.map((type) => [type.name, type]));
+  const topScore = Math.max(typeResult.ranked[0]?.[1] ?? 1, 0.0001);
+
+  typeResult.ranked.forEach(([typeName, score], index) => {
+    const percent = Math.max(4, (score / topScore) * 100);
+    const color = typeLookup.get(typeName)?.color ?? '#666';
+    const row = document.createElement('div');
+    row.className = 'affinity-row';
+    row.innerHTML = `
+      <div class="affinity-label-wrap">
+        <span class="affinity-rank">#${index + 1}</span>
+        <span class="affinity-name">${typeName}</span>
+      </div>
+      <div class="affinity-bar">
+        <span style="width:${percent}%; background:${color}"></span>
+      </div>
+      <span class="affinity-value">${Math.round(percent)}%</span>
+    `;
+    typeAffinityList.appendChild(row);
+  });
+}
+
+function renderMetrics(scores) {
+  metricGrid.innerHTML = '';
+
+  metricConfig.forEach(([key, label]) => {
+    const value = Math.max(0, Math.min(1, scores[key] ?? 0));
+    const card = document.createElement('div');
+    card.className = 'metric-card';
+    card.innerHTML = `
+      <div class="metric-card__top">
+        <span class="metric-label">${label}</span>
+        <span class="metric-score">${Math.round(value * 100)}%</span>
+      </div>
+      <div class="metric-bar"><span style="width:${value * 100}%"></span></div>
+    `;
+    metricGrid.appendChild(card);
+  });
+}
+
+function buildTextSummary(profile, features) {
+  return [
+    `${profile.name} — Pokésona Summary`,
+    `Types: ${profile.typeResult.selected.join(' / ')}`,
+    `Ability: ${profile.ability.name}`,
+    `Archetype: ${profile.stats.archetype}`,
+    `Base Stats: ${Object.entries(profile.stats.values)
+      .map(([key, value]) => `${formatStatName(key)} ${value}`)
+      .join(', ')}`,
+    `Traits: ${features.traitLabels.join(', ')}`,
+    `Moves: ${profile.moves.join(', ')}`,
+    `Dex Entry: ${profile.dex.text}`,
+  ].join('\n');
+}
+
+function roundNumber(value, digits = 2) {
+  const factor = 10 ** digits;
+  return Math.round(value * factor) / factor;
 }
 
 function formatStatName(key) {
@@ -285,7 +429,11 @@ function setStatus(message, isError) {
 }
 
 function clearResults() {
+  state.lastFeatures = null;
+  state.lastProfile = null;
   resultPlaceholder.hidden = false;
   resultContent.hidden = true;
   resultPlaceholder.textContent = 'Your generated profile will appear here after analysis.';
+  typeAffinityList.innerHTML = '';
+  metricGrid.innerHTML = '';
 }

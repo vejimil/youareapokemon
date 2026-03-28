@@ -12,6 +12,9 @@ A browser-only starter project that analyzes a face photo with MediaPipe Face La
 - Pokédex-style flavor text
 - Learnable move generation
 - Static-file structure that works well with GitHub Pages
+- Full 18-type affinity ranking view in the UI
+- Face-analysis metric cards for inspecting the score logic
+- Copyable text summary and downloadable JSON result
 
 ## Local run
 

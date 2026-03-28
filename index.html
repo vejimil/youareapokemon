@@ -44,6 +44,11 @@
             <button id="rerollButton" class="secondary-btn" disabled>Reroll flavor text</button>
           </div>
 
+          <div class="actions utility-actions">
+            <button id="copySummaryButton" class="secondary-btn" disabled>Copy summary</button>
+            <button id="downloadProfileButton" class="secondary-btn" disabled>Download profile JSON</button>
+          </div>
+
           <div id="statusMessage" class="status-message">
             Load an image to begin.
           </div>
@@ -114,6 +119,24 @@
                 <p class="subtle">Generated from type + vibe tags</p>
               </div>
               <div id="moveChips" class="chips"></div>
+            </section>
+
+            <section class="insight-grid detail-grid">
+              <section class="sub-panel">
+                <div class="sub-panel__header">
+                  <h4>18-type affinity ranking</h4>
+                  <p class="subtle">Relative score vs. the strongest match</p>
+                </div>
+                <div id="typeAffinityList" class="affinity-list"></div>
+              </section>
+
+              <section class="sub-panel">
+                <div class="sub-panel__header">
+                  <h4>Face analysis metrics</h4>
+                  <p class="subtle">Normalized from landmark + blendshape cues</p>
+                </div>
+                <div id="metricGrid" class="metric-grid"></div>
+              </section>
             </section>
           </div>
         </section>
