@@ -1,122 +1,620 @@
 [
   {
     "name": "맹화",
-    "description": "위기에 몰리면 불꽃 기술의 위력이 치솟는 특성이다.",
-    "tags": ["energetic", "warm", "intense"],
-    "types": ["Fire"]
+    "description": "HP가 줄어들면 불꽃 기술의 위력이 높아지는 특성이다.",
+    "tags": [
+      "energetic",
+      "warm",
+      "intense"
+    ],
+    "types": [
+      "Fire"
+    ]
   },
   {
     "name": "급류",
-    "description": "몰릴수록 물 기술이 거세지는 특성이다.",
-    "tags": ["cool", "steady", "elegant"],
-    "types": ["Water"]
+    "description": "HP가 줄어들면 물 기술의 위력이 높아지는 특성이다.",
+    "tags": [
+      "cool",
+      "steady",
+      "elegant"
+    ],
+    "types": [
+      "Water"
+    ]
   },
   {
     "name": "심록",
-    "description": "막판에 풀 기술의 힘이 짙어지는 특성이다.",
-    "tags": ["friendly", "steady", "elegant"],
-    "types": ["Grass"]
+    "description": "HP가 줄어들면 풀 기술의 위력이 높아지는 특성이다.",
+    "tags": [
+      "friendly",
+      "steady",
+      "elegant"
+    ],
+    "types": [
+      "Grass"
+    ]
   },
   {
     "name": "정전기",
-    "description": "몸에 모인 전류가 접촉한 상대를 마비시키기도 하는 특성이다.",
-    "tags": ["energetic", "curious"],
-    "types": ["Electric"]
+    "description": "접촉한 상대를 마비 상태로 만들 때가 있는 특성이다.",
+    "tags": [
+      "energetic",
+      "curious"
+    ],
+    "types": [
+      "Electric"
+    ]
   },
   {
     "name": "위협",
-    "description": "등장만으로 상대의 기세를 꺾는 특성이다.",
-    "tags": ["intense", "sharp"],
-    "types": ["Dark", "Fighting"]
+    "description": "등장하자마자 상대의 공격을 낮추는 특성이다.",
+    "tags": [
+      "intense",
+      "sharp"
+    ],
+    "types": [
+      "Dark",
+      "Fighting"
+    ]
   },
   {
     "name": "부유",
-    "description": "공중에 떠 있어 지면의 간섭을 받지 않는 특성이다.",
-    "tags": ["mysterious", "elegant", "curious"],
-    "types": ["Ghost", "Flying", "Psychic"]
+    "description": "공중에 떠 있어 땅 타입 기술을 받지 않는 특성이다.",
+    "tags": [
+      "mysterious",
+      "elegant",
+      "curious"
+    ],
+    "types": [
+      "Ghost",
+      "Flying",
+      "Psychic"
+    ]
   },
   {
     "name": "프레셔",
-    "description": "숨 막히는 압박으로 상대의 움직임을 빠르게 소모시키는 특성이다.",
-    "tags": ["mysterious", "steady", "intense"],
-    "types": ["Ghost", "Dragon", "Dark"]
+    "description": "압박감을 주어 상대 기술의 PP를 빨리 소모시키는 특성이다.",
+    "tags": [
+      "mysterious",
+      "steady",
+      "intense"
+    ],
+    "types": [
+      "Ghost",
+      "Dragon",
+      "Dark"
+    ]
   },
   {
     "name": "옹골참",
-    "description": "한 번은 반드시 버텨 내는 단단함을 지닌 특성이다.",
-    "tags": ["steady", "sharp"],
-    "types": ["Rock", "Steel", "Ground"]
+    "description": "HP가 가득 차 있으면 한 번은 반드시 버텨 내는 특성이다.",
+    "tags": [
+      "steady",
+      "sharp",
+      "bulky"
+    ],
+    "types": [
+      "Rock",
+      "Steel",
+      "Ground",
+      "Bug"
+    ]
   },
   {
     "name": "재생력",
-    "description": "물러나며 체력을 추슬러 다시 흐름을 되찾는 특성이다.",
-    "tags": ["friendly", "steady", "cool"],
-    "types": ["Water", "Grass", "Poison"]
+    "description": "교체할 때 HP를 조금 회복하는 특성이다.",
+    "tags": [
+      "friendly",
+      "steady",
+      "cool"
+    ],
+    "types": [
+      "Water",
+      "Grass",
+      "Poison"
+    ]
   },
   {
     "name": "테크니션",
-    "description": "자잘한 기술도 날카롭게 다듬어 위력을 끌어올리는 특성이다.",
-    "tags": ["sharp", "curious", "energetic"],
-    "types": ["Bug", "Steel", "Normal"]
+    "description": "위력이 낮은 기술의 위력을 높이는 특성이다.",
+    "tags": [
+      "sharp",
+      "curious",
+      "energetic"
+    ],
+    "types": [
+      "Bug",
+      "Steel",
+      "Normal"
+    ]
   },
   {
     "name": "적응력",
-    "description": "자신의 타입과 맞는 기술을 유난히 깊게 끌어내는 특성이다.",
-    "tags": ["sharp", "intense", "elegant"],
-    "types": ["Normal", "Dragon", "Water"]
+    "description": "자신과 같은 타입의 기술 위력이 더 높아지는 특성이다.",
+    "tags": [
+      "sharp",
+      "intense",
+      "elegant"
+    ],
+    "types": [
+      "Normal",
+      "Dragon",
+      "Water"
+    ]
   },
   {
     "name": "클리어바디",
-    "description": "상대의 간섭에도 기세가 흐트러지지 않는 특성이다.",
-    "tags": ["steady", "cool", "elegant"],
-    "types": ["Steel", "Psychic", "Ice"]
+    "description": "상대 때문에 능력치가 낮아지지 않는 특성이다.",
+    "tags": [
+      "steady",
+      "cool",
+      "elegant"
+    ],
+    "types": [
+      "Steel",
+      "Psychic",
+      "Ice"
+    ]
   },
   {
     "name": "하늘의은총",
-    "description": "작은 행운이 뜻밖의 전개로 이어지기 쉬운 특성이다.",
-    "tags": ["friendly", "elegant", "curious"],
-    "types": ["Fairy", "Flying", "Normal"]
+    "description": "기술의 추가 효과가 나오기 쉬워지는 특성이다.",
+    "tags": [
+      "friendly",
+      "elegant",
+      "curious"
+    ],
+    "types": [
+      "Fairy",
+      "Flying",
+      "Normal"
+    ]
   },
   {
     "name": "멀티스케일",
-    "description": "온전한 상태에서는 받는 충격을 크게 줄이는 특성이다.",
-    "tags": ["elegant", "steady", "cool"],
-    "types": ["Dragon", "Flying"]
+    "description": "HP가 가득 차 있으면 받는 데미지가 줄어드는 특성이다.",
+    "tags": [
+      "elegant",
+      "steady",
+      "bulky"
+    ],
+    "types": [
+      "Dragon",
+      "Flying"
+    ]
   },
   {
     "name": "매직미러",
-    "description": "방해 기술을 되비춰 흐름을 뒤집는 특성이다.",
-    "tags": ["mysterious", "elegant", "curious"],
-    "types": ["Psychic", "Fairy"]
+    "description": "변화 기술을 상대에게 되돌리는 특성이다.",
+    "tags": [
+      "mysterious",
+      "elegant",
+      "curious",
+      "tricky"
+    ],
+    "types": [
+      "Psychic",
+      "Fairy"
+    ]
   },
   {
     "name": "철가시",
-    "description": "건드린 상대가 그대로 상처를 입는 특성이다.",
-    "tags": ["sharp", "steady", "intense"],
-    "types": ["Steel", "Grass"]
+    "description": "접촉한 상대에게 데미지를 주는 특성이다.",
+    "tags": [
+      "sharp",
+      "steady",
+      "intense",
+      "bulky"
+    ],
+    "types": [
+      "Steel",
+      "Grass"
+    ]
   },
   {
     "name": "까칠한피부",
-    "description": "맞붙은 상대를 거친 표면으로 긁어내는 특성이다.",
-    "tags": ["intense", "sharp"],
-    "types": ["Dragon", "Dark", "Ground"]
+    "description": "접촉한 상대에게 상처를 되돌려 주는 특성이다.",
+    "tags": [
+      "intense",
+      "sharp"
+    ],
+    "types": [
+      "Dragon",
+      "Dark",
+      "Ground",
+      "Water"
+    ]
   },
   {
     "name": "헤롱헤롱바디",
-    "description": "접촉한 상대를 잠시 흔들리게 만드는 특성이다.",
-    "tags": ["friendly", "soft", "elegant"],
-    "types": ["Fairy", "Normal"]
+    "description": "접촉한 상대를 헤롱헤롱 상태로 만들 때가 있는 특성이다.",
+    "tags": [
+      "friendly",
+      "soft",
+      "elegant"
+    ],
+    "types": [
+      "Fairy",
+      "Normal"
+    ]
   },
   {
     "name": "자기과신",
-    "description": "상대를 꺾을수록 공격성이 더 강해지는 특성이다.",
-    "tags": ["energetic", "intense"],
-    "types": ["Dark", "Fighting", "Fire"]
+    "description": "상대를 쓰러뜨리면 공격이 올라가는 특성이다.",
+    "tags": [
+      "energetic",
+      "intense"
+    ],
+    "types": [
+      "Dark",
+      "Fighting",
+      "Fire"
+    ]
   },
   {
     "name": "마이페이스",
-    "description": "혼란스러운 상황에서도 자기 리듬을 잃지 않는 특성이다.",
-    "tags": ["friendly", "steady", "soft"],
-    "types": ["Normal", "Psychic", "Fairy"]
+    "description": "혼란 상태가 되지 않는 특성이다.",
+    "tags": [
+      "friendly",
+      "steady",
+      "soft"
+    ],
+    "types": [
+      "Normal",
+      "Psychic",
+      "Fairy"
+    ]
+  },
+  {
+    "name": "가속",
+    "description": "턴이 지날 때마다 스피드가 올라가는 특성이다.",
+    "tags": [
+      "energetic",
+      "sharp"
+    ],
+    "types": [
+      "Bug",
+      "Fire",
+      "Flying",
+      "Electric"
+    ]
+  },
+  {
+    "name": "천하장사",
+    "description": "공격 수치가 매우 높아지는 특성이다.",
+    "tags": [
+      "intense",
+      "soft"
+    ],
+    "types": [
+      "Fairy",
+      "Normal",
+      "Fighting"
+    ]
+  },
+  {
+    "name": "매직가드",
+    "description": "공격 기술이 아닌 데미지를 받지 않는 특성이다.",
+    "tags": [
+      "elegant",
+      "steady",
+      "tricky"
+    ],
+    "types": [
+      "Psychic",
+      "Fairy"
+    ]
+  },
+  {
+    "name": "스킬링크",
+    "description": "연속 기술이 항상 많이 맞는 특성이다.",
+    "tags": [
+      "sharp",
+      "energetic"
+    ],
+    "types": [
+      "Normal",
+      "Rock",
+      "Bug",
+      "Ice"
+    ]
+  },
+  {
+    "name": "틀깨기",
+    "description": "상대의 특성을 무시하고 기술을 쓰는 특성이다.",
+    "tags": [
+      "intense",
+      "sharp"
+    ],
+    "types": [
+      "Fighting",
+      "Ground",
+      "Dragon"
+    ]
+  },
+  {
+    "name": "선파워",
+    "description": "쾌청할 때 특수공격이 높아지는 특성이다.",
+    "tags": [
+      "warm",
+      "energetic",
+      "intense"
+    ],
+    "types": [
+      "Fire",
+      "Grass"
+    ]
+  },
+  {
+    "name": "엽록소",
+    "description": "쾌청할 때 스피드가 높아지는 특성이다.",
+    "tags": [
+      "friendly",
+      "energetic"
+    ],
+    "types": [
+      "Grass"
+    ]
+  },
+  {
+    "name": "근성",
+    "description": "상태이상일 때 공격이 높아지는 특성이다.",
+    "tags": [
+      "intense",
+      "steady"
+    ],
+    "types": [
+      "Fighting",
+      "Normal",
+      "Dark"
+    ]
+  },
+  {
+    "name": "승기",
+    "description": "능력치가 떨어지면 특수공격이 크게 올라가는 특성이다.",
+    "tags": [
+      "intense",
+      "elegant"
+    ],
+    "types": [
+      "Psychic",
+      "Water",
+      "Dark"
+    ]
+  },
+  {
+    "name": "스나이퍼",
+    "description": "급소에 맞췄을 때 위력이 더 높아지는 특성이다.",
+    "tags": [
+      "sharp",
+      "curious",
+      "intense"
+    ],
+    "types": [
+      "Dark",
+      "Poison",
+      "Water"
+    ]
+  },
+  {
+    "name": "변환자재",
+    "description": "기술에 맞춰 자신의 타입이 바뀌는 특성이다.",
+    "tags": [
+      "tricky",
+      "curious",
+      "energetic"
+    ],
+    "types": [
+      "Dark",
+      "Water",
+      "Normal"
+    ]
+  },
+  {
+    "name": "노가드",
+    "description": "서로의 기술이 반드시 맞게 되는 특성이다.",
+    "tags": [
+      "intense",
+      "steady"
+    ],
+    "types": [
+      "Fighting",
+      "Ghost"
+    ]
+  },
+  {
+    "name": "분석",
+    "description": "나중에 움직이면 기술의 위력이 높아지는 특성이다.",
+    "tags": [
+      "curious",
+      "steady",
+      "elegant"
+    ],
+    "types": [
+      "Bug",
+      "Electric",
+      "Steel"
+    ]
+  },
+  {
+    "name": "미라",
+    "description": "접촉한 상대의 특성을 미라로 바꾸는 특성이다.",
+    "tags": [
+      "mysterious",
+      "tricky",
+      "steady"
+    ],
+    "types": [
+      "Ghost"
+    ]
+  },
+  {
+    "name": "독수",
+    "description": "독 상태의 상대에게 주는 데미지가 높아지는 특성이다.",
+    "tags": [
+      "sharp",
+      "intense",
+      "tricky"
+    ],
+    "types": [
+      "Poison",
+      "Dark"
+    ]
+  },
+  {
+    "name": "두꺼운지방",
+    "description": "불꽃과 얼음 기술의 데미지를 줄이는 특성이다.",
+    "tags": [
+      "soft",
+      "steady",
+      "bulky"
+    ],
+    "types": [
+      "Ice",
+      "Normal",
+      "Water"
+    ]
+  },
+  {
+    "name": "방진",
+    "description": "가루와 날리는 기술의 영향을 받지 않는 특성이다.",
+    "tags": [
+      "steady",
+      "bulky"
+    ],
+    "types": [
+      "Grass",
+      "Bug",
+      "Steel"
+    ]
+  },
+  {
+    "name": "천진",
+    "description": "상대의 능력 변화에 영향을 받지 않는 특성이다.",
+    "tags": [
+      "soft",
+      "steady"
+    ],
+    "types": [
+      "Fairy",
+      "Water",
+      "Normal"
+    ]
+  },
+  {
+    "name": "색안경",
+    "description": "효과가 별로인 기술도 강하게 밀어붙이는 특성이다.",
+    "tags": [
+      "curious",
+      "sharp",
+      "tricky"
+    ],
+    "types": [
+      "Bug",
+      "Flying",
+      "Dark"
+    ]
+  },
+  {
+    "name": "미러아머",
+    "description": "능력치를 낮추는 효과를 상대에게 되돌리는 특성이다.",
+    "tags": [
+      "sharp",
+      "cool",
+      "elegant"
+    ],
+    "types": [
+      "Flying",
+      "Steel"
+    ]
+  },
+  {
+    "name": "페어리스킨",
+    "description": "노말 기술을 페어리 타입으로 바꾸고 위력을 높이는 특성이다.",
+    "tags": [
+      "friendly",
+      "elegant",
+      "soft"
+    ],
+    "types": [
+      "Fairy"
+    ]
+  },
+  {
+    "name": "스카이스킨",
+    "description": "노말 기술을 비행 타입으로 바꾸고 위력을 높이는 특성이다.",
+    "tags": [
+      "energetic",
+      "elegant"
+    ],
+    "types": [
+      "Flying"
+    ]
+  },
+  {
+    "name": "프리즈스킨",
+    "description": "노말 기술을 얼음 타입으로 바꾸고 위력을 높이는 특성이다.",
+    "tags": [
+      "cool",
+      "elegant",
+      "sharp"
+    ],
+    "types": [
+      "Ice"
+    ]
+  },
+  {
+    "name": "매지션",
+    "description": "공격할 때 상대의 도구를 빼앗을 수 있는 특성이다.",
+    "tags": [
+      "tricky",
+      "curious",
+      "mysterious"
+    ],
+    "types": [
+      "Psychic",
+      "Fairy",
+      "Ghost"
+    ]
+  },
+  {
+    "name": "주눅",
+    "description": "상대가 위축하기 쉬워지는 압박감을 지닌 특성이다.",
+    "tags": [
+      "intense",
+      "mysterious"
+    ],
+    "types": [
+      "Dark",
+      "Ghost",
+      "Poison"
+    ]
+  },
+  {
+    "name": "테라볼티지",
+    "description": "상대의 특성에 막히지 않고 기술을 밀어붙이는 특성이다.",
+    "tags": [
+      "intense",
+      "energetic",
+      "sharp"
+    ],
+    "types": [
+      "Electric",
+      "Dragon"
+    ]
+  },
+  {
+    "name": "터보블레이즈",
+    "description": "상대의 특성에 흔들리지 않고 화력을 밀어붙이는 특성이다.",
+    "tags": [
+      "intense",
+      "warm",
+      "sharp"
+    ],
+    "types": [
+      "Fire",
+      "Dragon"
+    ]
   }
 ]

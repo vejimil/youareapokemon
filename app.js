@@ -280,8 +280,7 @@ function setStatus(message, isError) {
 }
 
 function clearResults() {
-  resultPlaceholder.hidden = false;
+  resultPlaceholder.hidden = true;
   resultContent.hidden = true;
-  resultPlaceholder.textContent = '분석이 끝나면 여기에 결과가 표시된다.';
   metricGrid.innerHTML = '';
 }
