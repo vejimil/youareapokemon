@@ -59,12 +59,12 @@ function luminance({ r, g, b }) {
 function buildTraitLabels(scores) {
   const traits = [];
 
-  traits.push(scores.energy > 0.62 ? 'high energy' : scores.energy < 0.35 ? 'calm energy' : 'balanced energy');
-  traits.push(scores.warmth > 0.58 ? 'warm color aura' : scores.warmth < 0.42 ? 'cool color aura' : 'neutral color aura');
-  traits.push(scores.smile > 0.52 ? 'friendly expression' : scores.smile < 0.18 ? 'serious expression' : 'steady expression');
-  traits.push(scores.sharpness > 0.58 ? 'sharp features' : scores.sharpness < 0.42 ? 'soft features' : 'balanced features');
-  traits.push(scores.openness > 0.56 ? 'open gaze' : scores.openness < 0.4 ? 'guarded gaze' : 'focused gaze');
-  traits.push(scores.symmetry > 0.76 ? 'strong symmetry' : 'slightly asymmetrical charm');
+  traits.push(scores.energy > 0.62 ? '에너지가 높음' : scores.energy < 0.35 ? '차분한 에너지' : '균형 잡힌 에너지');
+  traits.push(scores.warmth > 0.58 ? '따뜻한 색감' : scores.warmth < 0.42 ? '차가운 색감' : '중립적인 색감');
+  traits.push(scores.smile > 0.52 ? '친근한 표정' : scores.smile < 0.18 ? '진지한 표정' : '안정적인 표정');
+  traits.push(scores.sharpness > 0.58 ? '날카로운 인상' : scores.sharpness < 0.42 ? '부드러운 인상' : '균형 잡힌 인상');
+  traits.push(scores.openness > 0.56 ? '열린 시선' : scores.openness < 0.4 ? '경계하는 시선' : '집중된 시선');
+  traits.push(scores.symmetry > 0.76 ? '대칭감이 강함' : '살짝 비대칭적인 매력');
 
   return traits;
 }

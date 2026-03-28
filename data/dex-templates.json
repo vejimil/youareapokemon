@@ -1,36 +1,36 @@
 {
   "openers": [
-    "It quietly studies the feelings of the people around it before taking action.",
-    "It stores ambient energy in subtle shifts of expression and posture.",
-    "It reads a room in an instant, then reshapes its aura to match the moment.",
-    "It channels its mood into a visible elemental presence that changes in battle."
+    "주변 사람의 감정을 조용히 살핀 뒤에 움직입니다.",
+    "표정과 자세의 미세한 변화 속에 에너지를 저장합니다.",
+    "순간적으로 분위기를 읽고 그에 맞춰 기운을 바꿉니다.",
+    "기분의 흐름을 눈에 보이는 속성 에너지로 바꿔 냅니다."
   ],
   "habits": {
     "gentle": [
-      "When relaxed, it stays close to companions and mirrors their pace.",
-      "It prefers to guide others with soft signals rather than direct force.",
-      "It often watches quietly, then steps in with surprising care and timing.",
-      "Around trusted partners, it becomes far more expressive and playful."
+      "편안할 때는 동료 곁에 머물며 흐름을 맞춥니다.",
+      "강한 힘보다는 부드러운 신호로 상대를 이끕니다.",
+      "잠잠히 지켜보다가 정확한 순간에 조용히 움직입니다.",
+      "믿는 상대 앞에서는 훨씬 더 장난스럽고 풍부한 표정을 보입니다."
     ],
     "mysterious": [
-      "It appears and disappears from crowded places without anyone noticing how it moved.",
-      "Witnesses say its presence lingers even after it has already slipped away.",
-      "It keeps its intentions hidden until the exact instant it decides to act.",
-      "Its aura changes subtly in low light, making its movements hard to predict."
+      "사람이 많은 곳에서도 어느새 모습을 감춰 버립니다.",
+      "지나간 자리에도 한동안 기척이 남아 있다고 전해집니다.",
+      "움직이기로 결심한 순간까지 의도를 쉽게 드러내지 않습니다.",
+      "어두운 곳에서는 기운이 미묘하게 바뀌어 움직임을 읽기 어렵습니다."
     ]
   },
   "battle": {
     "fast": [
-      "bursts forward before opponents can settle into position.",
-      "turns small openings into a chain of rapid attacks.",
-      "moves with startling speed once its confidence rises.",
-      "leans on tempo and sharp reactions rather than brute force."
+      "상대가 자세를 잡기 전에 먼저 파고듭니다.",
+      "작은 빈틈을 연속 공격으로 연결합니다.",
+      "자신감이 붙으면 놀랄 만큼 빠르게 움직입니다.",
+      "힘으로 누르기보다 리듬과 반응 속도로 승부합니다."
     ],
     "steady": [
-      "fights with patient timing and carefully measured force.",
-      "prefers to control the pace before committing to a decisive strike.",
-      "holds the field calmly until a clear advantage appears.",
-      "builds pressure little by little, then finishes with clean precision."
+      "차분한 타이밍과 계산된 힘으로 싸웁니다.",
+      "속도를 장악한 뒤 결정적인 한 방을 노립니다.",
+      "확실한 우위가 생길 때까지 침착하게 버팁니다.",
+      "압박을 조금씩 쌓다가 마지막에 정확하게 마무리합니다."
     ]
   }
 }

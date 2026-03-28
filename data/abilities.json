@@ -1,18 +1,208 @@
 [
-  {"name":"Kindled Core","description":"Boosts output when emotions flare up.","tags":["energetic","warm","intense"],"types":["Fire","Dragon"]},
-  {"name":"Ripple Veil","description":"Softens incoming force with calm pressure.","tags":["cool","steady","elegant"],"types":["Water","Ice"]},
-  {"name":"Static Tempo","description":"Sharpens reactions after sudden movement.","tags":["energetic","curious"],"types":["Electric","Flying"]},
-  {"name":"Bloom Pulse","description":"Recovers poise while supporting allies.","tags":["friendly","steady","elegant"],"types":["Grass","Fairy"]},
-  {"name":"Inner Focus","description":"Keeps its aim steady under pressure.","tags":["steady","sharp","elegant"],"types":["Psychic","Steel"]},
-  {"name":"Shadow Thread","description":"Moves become harder to read in dim moments.","tags":["mysterious","sharp"],"types":["Ghost","Dark"]},
-  {"name":"Battle Rhythm","description":"Momentum builds with each successful strike.","tags":["energetic","intense"],"types":["Fighting","Fire"]},
-  {"name":"Crystal Guard","description":"Precision and symmetry reinforce defense.","tags":["steady","elegant","cool"],"types":["Ice","Steel","Rock"]},
-  {"name":"Toxic Insight","description":"Finds openings with patient, unsettling timing.","tags":["mysterious","steady","curious"],"types":["Poison","Psychic"]},
-  {"name":"Drift Step","description":"Glides around threats with airy control.","tags":["elegant","energetic"],"types":["Flying","Fairy"]},
-  {"name":"Rooted Will","description":"Holds firm and resists displacement.","tags":["steady","friendly"],"types":["Grass","Ground","Rock"]},
-  {"name":"Mirage Pulse","description":"Emotional shifts create confusing afterimages.","tags":["mysterious","warm","curious"],"types":["Fire","Ghost","Psychic"]},
-  {"name":"Volt Smile","description":"Friendly energy raises team tempo.","tags":["friendly","energetic"],"types":["Electric","Fairy","Normal"]},
-  {"name":"Silent Alloy","description":"Expressionless poise dampens disruption.","tags":["sharp","steady"],"types":["Steel","Dark"]},
-  {"name":"Prism Wing","description":"Refined movement bends light around its body.","tags":["elegant","curious","friendly"],"types":["Flying","Psychic","Fairy"]},
-  {"name":"Raw Resolve","description":"Pushes through fear with pure commitment.","tags":["intense","steady"],"types":["Normal","Fighting","Ground"]}
+  {
+    "name": "타오르는 코어",
+    "description": "감정이 뜨거워질수록 힘이 강해집니다.",
+    "tags": [
+      "energetic",
+      "warm",
+      "intense"
+    ],
+    "types": [
+      "Fire",
+      "Dragon"
+    ]
+  },
+  {
+    "name": "물결 장막",
+    "description": "차분한 흐름으로 들어오는 힘을 흘려보냅니다.",
+    "tags": [
+      "cool",
+      "steady",
+      "elegant"
+    ],
+    "types": [
+      "Water",
+      "Ice"
+    ]
+  },
+  {
+    "name": "정전기 리듬",
+    "description": "갑작스러운 움직임 뒤에 반응 속도가 날카로워집니다.",
+    "tags": [
+      "energetic",
+      "curious"
+    ],
+    "types": [
+      "Electric",
+      "Flying"
+    ]
+  },
+  {
+    "name": "블룸 펄스",
+    "description": "동료를 도우며 흐트러진 균형을 되찾습니다.",
+    "tags": [
+      "friendly",
+      "steady",
+      "elegant"
+    ],
+    "types": [
+      "Grass",
+      "Fairy"
+    ]
+  },
+  {
+    "name": "내면 집중",
+    "description": "압박 속에서도 목표를 놓치지 않습니다.",
+    "tags": [
+      "steady",
+      "sharp",
+      "elegant"
+    ],
+    "types": [
+      "Psychic",
+      "Steel"
+    ]
+  },
+  {
+    "name": "그림자 실",
+    "description": "어두운 순간일수록 움직임을 읽기 어려워집니다.",
+    "tags": [
+      "mysterious",
+      "sharp"
+    ],
+    "types": [
+      "Ghost",
+      "Dark"
+    ]
+  },
+  {
+    "name": "배틀 리듬",
+    "description": "공격이 이어질수록 흐름이 가속됩니다.",
+    "tags": [
+      "energetic",
+      "intense"
+    ],
+    "types": [
+      "Fighting",
+      "Fire"
+    ]
+  },
+  {
+    "name": "크리스털 가드",
+    "description": "정교함과 대칭감이 방어를 강화합니다.",
+    "tags": [
+      "steady",
+      "elegant",
+      "cool"
+    ],
+    "types": [
+      "Ice",
+      "Steel",
+      "Rock"
+    ]
+  },
+  {
+    "name": "독의 통찰",
+    "description": "불안한 타이밍을 이용해 빈틈을 찾아냅니다.",
+    "tags": [
+      "mysterious",
+      "steady",
+      "curious"
+    ],
+    "types": [
+      "Poison",
+      "Psychic"
+    ]
+  },
+  {
+    "name": "드리프트 스텝",
+    "description": "가벼운 흐름으로 위협을 미끄러지듯 피합니다.",
+    "tags": [
+      "elegant",
+      "energetic"
+    ],
+    "types": [
+      "Flying",
+      "Fairy"
+    ]
+  },
+  {
+    "name": "뿌리 내린 의지",
+    "description": "자리를 지키며 쉽게 밀려나지 않습니다.",
+    "tags": [
+      "steady",
+      "friendly"
+    ],
+    "types": [
+      "Grass",
+      "Ground",
+      "Rock"
+    ]
+  },
+  {
+    "name": "신기루 파동",
+    "description": "감정의 변화가 잔상을 남겨 상대를 혼란스럽게 합니다.",
+    "tags": [
+      "mysterious",
+      "warm",
+      "curious"
+    ],
+    "types": [
+      "Fire",
+      "Ghost",
+      "Psychic"
+    ]
+  },
+  {
+    "name": "볼트 스마일",
+    "description": "밝은 에너지로 팀의 흐름을 끌어올립니다.",
+    "tags": [
+      "friendly",
+      "energetic"
+    ],
+    "types": [
+      "Electric",
+      "Fairy",
+      "Normal"
+    ]
+  },
+  {
+    "name": "고요한 합금",
+    "description": "무표정한 침착함으로 방해를 줄입니다.",
+    "tags": [
+      "sharp",
+      "steady"
+    ],
+    "types": [
+      "Steel",
+      "Dark"
+    ]
+  },
+  {
+    "name": "프리즘 윙",
+    "description": "정제된 움직임으로 몸 주변의 빛을 비틀어 냅니다.",
+    "tags": [
+      "elegant",
+      "curious",
+      "friendly"
+    ],
+    "types": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ]
+  },
+  {
+    "name": "거친 결의",
+    "description": "두려움 속에서도 끝까지 밀어붙입니다.",
+    "tags": [
+      "intense",
+      "steady"
+    ],
+    "types": [
+      "Normal",
+      "Fighting",
+      "Ground"
+    ]
+  }
 ]

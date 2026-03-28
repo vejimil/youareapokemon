@@ -21,7 +21,7 @@ export function generateMoves({ features, typeResult, stats, movePools }) {
     pool = pool.concat(movePools.tags.fast ?? []);
   }
 
-  if (s.smile > 0.52 || stats.archetype === 'Support Specialist') {
+  if (s.smile > 0.52 || stats.archetype === '서포트형') {
     pool = pool.concat(movePools.tags.support ?? []);
   }
 

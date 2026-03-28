@@ -167,27 +167,38 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-#previewImage,
-#overlayCanvas {
+#previewImage {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
 }
 
-#overlayCanvas {
+#overlayCanvas,
+.empty-preview {
   position: absolute;
   inset: 0;
+}
+
+#overlayCanvas {
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+  z-index: 2;
 }
 
 .empty-preview,
 .result-placeholder {
   display: grid;
   place-items: center;
-  min-height: inherit;
   text-align: center;
   color: var(--soft);
   padding: 22px;
   line-height: 1.6;
+}
+
+.result-placeholder {
+  min-height: 220px;
 }
 
 .actions {
@@ -541,4 +552,16 @@ input {
 
 .metric-bar > span {
   background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+
+
+.bst-wrap--left {
+  text-align: left;
+}
+
+.metric-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
 }

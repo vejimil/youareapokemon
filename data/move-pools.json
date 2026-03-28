@@ -1,30 +1,145 @@
 {
   "byType": {
-    "Normal": ["Quick Attack", "Swift", "Endure", "Hyper Voice"],
-    "Fire": ["Ember", "Flame Charge", "Mystical Fire", "Heat Wave"],
-    "Water": ["Water Pulse", "Bubble Beam", "Aqua Jet", "Surf"],
-    "Electric": ["Thunder Shock", "Spark", "Charge Beam", "Thunderbolt"],
-    "Grass": ["Magical Leaf", "Razor Leaf", "Giga Drain", "Seed Bomb"],
-    "Ice": ["Powder Snow", "Icy Wind", "Ice Beam", "Freeze-Dry"],
-    "Fighting": ["Double Kick", "Brick Break", "Drain Punch", "Close Combat"],
-    "Poison": ["Acid Spray", "Poison Jab", "Venoshock", "Sludge Bomb"],
-    "Ground": ["Mud Shot", "Bulldoze", "Stomping Tantrum", "Earth Power"],
-    "Flying": ["Gust", "Air Cutter", "Aerial Ace", "Air Slash"],
-    "Psychic": ["Confusion", "Psybeam", "Calm Mind", "Psychic"],
-    "Bug": ["Struggle Bug", "Bug Bite", "Silver Wind", "X-Scissor"],
-    "Rock": ["Rock Throw", "Rock Tomb", "Power Gem", "Stone Edge"],
-    "Ghost": ["Astonish", "Hex", "Shadow Sneak", "Shadow Ball"],
-    "Dragon": ["Twister", "Dragon Breath", "Dragon Pulse", "Draco Meteor"],
-    "Dark": ["Bite", "Assurance", "Night Slash", "Dark Pulse"],
-    "Steel": ["Metal Claw", "Mirror Shot", "Flash Cannon", "Iron Head"],
-    "Fairy": ["Fairy Wind", "Draining Kiss", "Moonblast", "Dazzling Gleam"]
+    "Normal": [
+      "전광석화",
+      "스피드스타",
+      "버티기",
+      "하이퍼보이스"
+    ],
+    "Fire": [
+      "불꽃세례",
+      "니트로차지",
+      "매지컬플레임",
+      "열풍"
+    ],
+    "Water": [
+      "물의파동",
+      "거품광선",
+      "아쿠아제트",
+      "파도타기"
+    ],
+    "Electric": [
+      "전기쇼크",
+      "스파크",
+      "차지빔",
+      "10만볼트"
+    ],
+    "Grass": [
+      "매지컬리프",
+      "잎날가르기",
+      "기가드레인",
+      "씨폭탄"
+    ],
+    "Ice": [
+      "얼음뭉치",
+      "얼다바람",
+      "냉동빔",
+      "프리즈드라이"
+    ],
+    "Fighting": [
+      "두번차기",
+      "벽돌깨기",
+      "드레인펀치",
+      "인파이트"
+    ],
+    "Poison": [
+      "애시드봄",
+      "독찌르기",
+      "베놈쇼크",
+      "오물폭탄"
+    ],
+    "Ground": [
+      "머드숏",
+      "땅고르기",
+      "분함의발구르기",
+      "대지의힘"
+    ],
+    "Flying": [
+      "바람일으키기",
+      "에어커터",
+      "제비반환",
+      "에어슬래시"
+    ],
+    "Psychic": [
+      "염동력",
+      "사이코빔",
+      "명상",
+      "사이코키네시스"
+    ],
+    "Bug": [
+      "벌레의저항",
+      "벌레먹기",
+      "은빛바람",
+      "시저크로스"
+    ],
+    "Rock": [
+      "돌떨구기",
+      "암석봉인",
+      "파워젬",
+      "스톤에지"
+    ],
+    "Ghost": [
+      "놀래키기",
+      "병상첨병",
+      "야습",
+      "섀도볼"
+    ],
+    "Dragon": [
+      "회오리",
+      "용의숨결",
+      "용의파동",
+      "용성군"
+    ],
+    "Dark": [
+      "깨물어부수기",
+      "승부굳히기",
+      "나이트슬래시",
+      "악의파동"
+    ],
+    "Steel": [
+      "메탈크로우",
+      "미러샷",
+      "러스터캐논",
+      "아이언헤드"
+    ],
+    "Fairy": [
+      "요정의바람",
+      "드레이닝키스",
+      "문포스",
+      "매지컬샤인"
+    ]
   },
-  "common": ["Protect", "Facade", "Substitute", "Rest"],
+  "common": [
+    "방어",
+    "객기",
+    "대타출동",
+    "잠자기"
+  ],
   "tags": {
-    "fast": ["Agility", "Tailwind", "Extreme Speed"],
-    "support": ["Helping Hand", "Light Screen", "Heal Pulse"],
-    "shadowy": ["Confuse Ray", "Disable", "Phantom Force"],
-    "physical": ["Swords Dance", "U-turn", "Body Slam"],
-    "special": ["Nasty Plot", "Stored Power", "Tri Attack"]
+    "fast": [
+      "고속이동",
+      "순풍",
+      "신속"
+    ],
+    "support": [
+      "도우미",
+      "빛의장막",
+      "치유파동"
+    ],
+    "shadowy": [
+      "이상한빛",
+      "금지",
+      "고스트다이브"
+    ],
+    "physical": [
+      "칼춤",
+      "유턴",
+      "누르기"
+    ],
+    "special": [
+      "나쁜음모",
+      "어시스트파워",
+      "트라이어택"
+    ]
   }
 }

@@ -6,6 +6,15 @@ function sortEntries(scoreMap) {
   return Object.entries(scoreMap).sort((a, b) => b[1] - a[1]);
 }
 
+function translateTypeName(typeName) {
+  const map = {
+    Normal: '노말', Fire: '불꽃', Water: '물', Electric: '전기', Grass: '풀', Ice: '얼음',
+    Fighting: '격투', Poison: '독', Ground: '땅', Flying: '비행', Psychic: '에스퍼', Bug: '벌레',
+    Rock: '바위', Ghost: '고스트', Dragon: '드래곤', Dark: '악', Steel: '강철', Fairy: '페어리',
+  };
+  return map[typeName] ?? typeName;
+}
+
 export function generateTypes(features, types) {
   const s = features.scores;
 
@@ -44,13 +53,13 @@ export function generateTypes(features, types) {
   const typeLookup = new Map(types.map((type) => [type.name, type]));
   const reasons = selected.map((typeName) => {
     const typeData = typeLookup.get(typeName);
-    return `${typeName}: ${typeData?.reasonTemplate ?? 'matched the strongest visual vibe'} (${round(scoreMap[typeName])})`;
+    return `${translateTypeName(typeName)}: ${typeData?.reasonTemplate ?? '가장 잘 맞는 분위기였습니다.'} (${round(scoreMap[typeName])})`;
   });
 
-  if (s.energy > 0.62) reasons.push('High energy pushed the profile toward faster and more explosive typings.');
-  if (s.mystery > 0.58) reasons.push('A mysterious, lower-brightness impression boosted hidden or unusual typings.');
-  if (s.smile > 0.52) reasons.push('A friendly expression increased softer or more playful type affinity.');
-  if (s.symmetry > 0.78) reasons.push('Strong symmetry reinforced refined or disciplined type choices.');
+  if (s.energy > 0.62) reasons.push('에너지가 높아 빠르고 폭발적인 타입 쪽 점수가 올라갔습니다.');
+  if (s.mystery > 0.58) reasons.push('신비롭고 어두운 분위기가 숨겨진 느낌의 타입에 영향을 주었습니다.');
+  if (s.smile > 0.52) reasons.push('친근한 표정이 부드럽고 가벼운 타입 쪽 점수를 높였습니다.');
+  if (s.symmetry > 0.78) reasons.push('강한 대칭감이 정돈되고 절제된 타입 선택을 강화했습니다.');
 
   return {
     scoreMap,

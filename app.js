@@ -1,10 +1,11 @@
+
 import { createFaceAnalyzer } from './src/face-analyzer.js';
 import { extractFeatures } from './src/feature-extractor.js';
 import { generateTypes } from './src/type-generator.js';
 import { generateAbility } from './src/ability-generator.js';
 import { generateStats } from './src/stat-generator.js';
 import { generateMoves } from './src/move-generator.js';
-import { generateDexEntry, generateSpeciesName } from './src/dex-generator.js';
+import { generateDexEntry } from './src/dex-generator.js';
 
 const imageInput = document.querySelector('#imageInput');
 const previewImage = document.querySelector('#previewImage');
@@ -19,7 +20,6 @@ const modelStatus = document.querySelector('#modelStatus');
 const resultPlaceholder = document.querySelector('#resultPlaceholder');
 const resultContent = document.querySelector('#resultContent');
 
-const speciesName = document.querySelector('#speciesName');
 const bstValue = document.querySelector('#bstValue');
 const typeBadges = document.querySelector('#typeBadges');
 const abilityBox = document.querySelector('#abilityBox');
@@ -29,8 +29,13 @@ const reasonList = document.querySelector('#reasonList');
 const archetypeText = document.querySelector('#archetypeText');
 const statRows = document.querySelector('#statRows');
 const moveChips = document.querySelector('#moveChips');
-const typeAffinityList = document.querySelector('#typeAffinityList');
 const metricGrid = document.querySelector('#metricGrid');
+
+const TYPE_LABELS = {
+  Normal: '노말', Fire: '불꽃', Water: '물', Electric: '전기', Grass: '풀', Ice: '얼음',
+  Fighting: '격투', Poison: '독', Ground: '땅', Flying: '비행', Psychic: '에스퍼', Bug: '벌레',
+  Rock: '바위', Ghost: '고스트', Dragon: '드래곤', Dark: '악', Steel: '강철', Fairy: '페어리',
+};
 
 const state = {
   data: null,
@@ -41,23 +46,23 @@ const state = {
 };
 
 const metricConfig = [
-  ['energy', 'Energy'],
-  ['smile', 'Smile'],
-  ['mystery', 'Mystery'],
-  ['elegance', 'Elegance'],
-  ['intensity', 'Intensity'],
-  ['symmetry', 'Symmetry'],
-  ['warmth', 'Warmth'],
-  ['openness', 'Openness'],
+  ['energy', '에너지'],
+  ['smile', '미소'],
+  ['mystery', '신비로움'],
+  ['elegance', '우아함'],
+  ['intensity', '강렬함'],
+  ['symmetry', '대칭감'],
+  ['warmth', '따뜻함'],
+  ['openness', '개방감'],
 ];
 
 init().catch((error) => {
   console.error(error);
-  setStatus(`Initialization failed: ${error.message}`, true);
+  setStatus(`초기화에 실패했습니다: ${error.message}`, true);
 });
 
 async function init() {
-  setStatus('Loading local data...', false);
+  setStatus('로컬 데이터를 불러오는 중입니다...', false);
 
   const [types, abilities, movePools, dexTemplates] = await Promise.all([
     fetch('./data/types.json').then((res) => res.json()),
@@ -68,10 +73,10 @@ async function init() {
 
   state.data = { types, abilities, movePools, dexTemplates };
 
-  setStatus('Loading MediaPipe Face Landmarker...', false);
+  setStatus('얼굴 분석 모델을 불러오는 중입니다...', false);
   state.analyzer = await createFaceAnalyzer();
-  modelStatus.textContent = 'Face model ready';
-  setStatus('Ready. Upload a face image to generate a profile.', false);
+  modelStatus.textContent = '얼굴 모델 준비 완료';
+  setStatus('준비가 끝났습니다. 얼굴 사진을 업로드해 주세요.', false);
 }
 
 imageInput.addEventListener('change', async (event) => {
@@ -97,7 +102,7 @@ imageInput.addEventListener('change', async (event) => {
     await previewImage.decode();
   } catch (error) {
     console.error(error);
-    setStatus('This image could not be decoded by the browser. Try a JPG or PNG file.', true);
+    setStatus('브라우저가 이 이미지를 읽지 못했습니다. JPG나 PNG 파일을 사용해 주세요.', true);
     return;
   }
 
@@ -105,7 +110,7 @@ imageInput.addEventListener('change', async (event) => {
   clearCanvas();
 
   analyzeButton.disabled = false;
-  setStatus('Image loaded. Click “Analyze face”.', false);
+  setStatus('이미지를 불러왔습니다. “얼굴 분석하기”를 눌러 주세요.', false);
 });
 
 analyzeButton.addEventListener('click', async () => {
@@ -116,13 +121,13 @@ analyzeButton.addEventListener('click', async () => {
   copySummaryButton.disabled = true;
   downloadProfileButton.disabled = true;
   clearCanvas();
-  setStatus('Analyzing face landmarks...', false);
+  setStatus('얼굴 랜드마크를 분석하는 중입니다...', false);
 
   try {
     const analysis = await state.analyzer.detect(previewImage);
 
     if (!analysis.faceLandmarks?.length) {
-      throw new Error('No face was detected. Try a clearer front-facing image.');
+      throw new Error('얼굴을 찾지 못했습니다. 정면에 가깝고 선명한 사진으로 다시 시도해 주세요.');
     }
 
     drawOverlay(analysis.faceLandmarks[0]);
@@ -134,31 +139,19 @@ analyzeButton.addEventListener('click', async () => {
     });
 
     const typeResult = generateTypes(features, state.data.types);
-    const ability = generateAbility({
-      features,
-      typeResult,
-      abilities: state.data.abilities,
-    });
+    const ability = generateAbility({ features, typeResult, abilities: state.data.abilities });
     const stats = generateStats({ features, typeResult });
-    const moves = generateMoves({
-      features,
-      typeResult,
-      stats,
-      movePools: state.data.movePools,
-    });
-    const name = generateSpeciesName({ features, typeResult });
+    const moves = generateMoves({ features, typeResult, stats, movePools: state.data.movePools });
     const dex = generateDexEntry({
       features,
       typeResult,
       ability,
       stats,
       dexTemplates: state.data.dexTemplates,
-      speciesName: name,
     });
 
     state.lastFeatures = features;
     state.lastProfile = {
-      name,
       typeResult,
       ability,
       stats,
@@ -172,7 +165,7 @@ analyzeButton.addEventListener('click', async () => {
     rerollButton.disabled = false;
     copySummaryButton.disabled = false;
     downloadProfileButton.disabled = false;
-    setStatus('Profile generated successfully.', false);
+    setStatus('프로필 생성이 완료되었습니다.', false);
   } catch (error) {
     console.error(error);
     setStatus(error.message, true);
@@ -189,11 +182,10 @@ rerollButton.addEventListener('click', () => {
     ability: state.lastProfile.ability,
     stats: state.lastProfile.stats,
     dexTemplates: state.data.dexTemplates,
-    speciesName: state.lastProfile.name,
   });
 
   dexEntry.textContent = state.lastProfile.dex.text;
-  setStatus('Flavor text rerolled.', false);
+  setStatus('도감 설명을 다시 생성했습니다.', false);
 });
 
 copySummaryButton.addEventListener('click', async () => {
@@ -203,10 +195,10 @@ copySummaryButton.addEventListener('click', async () => {
 
   try {
     await navigator.clipboard.writeText(summary);
-    setStatus('Summary copied to clipboard.', false);
+    setStatus('요약을 클립보드에 복사했습니다.', false);
   } catch (error) {
     console.error(error);
-    setStatus('Clipboard copy failed in this browser context.', true);
+    setStatus('이 브라우저 환경에서는 클립보드 복사가 실패했습니다.', true);
   }
 });
 
@@ -214,53 +206,47 @@ downloadProfileButton.addEventListener('click', () => {
   if (!state.lastProfile || !state.lastFeatures) return;
 
   const payload = {
-    generatedAt: state.lastProfile.createdAt,
-    speciesName: state.lastProfile.name,
-    selectedTypes: state.lastProfile.typeResult.selected,
-    typeRanking: state.lastProfile.typeResult.ranked.map(([type, score]) => ({
-      type,
-      score: roundNumber(score, 4),
-    })),
-    ability: state.lastProfile.ability,
-    archetype: state.lastProfile.stats.archetype,
-    baseStats: state.lastProfile.stats.values,
-    baseStatTotal: state.lastProfile.stats.total,
-    traits: state.lastFeatures.traitLabels,
-    metrics: Object.fromEntries(
+    생성시각: state.lastProfile.createdAt,
+    타입: state.lastProfile.typeResult.selected.map(translateTypeName),
+    특성: state.lastProfile.ability,
+    전투성향: state.lastProfile.stats.archetype,
+    종족값: state.lastProfile.stats.values,
+    종족값합계: state.lastProfile.stats.total,
+    분위기태그: state.lastFeatures.traitLabels,
+    얼굴지표: Object.fromEntries(
       metricConfig.map(([key, label]) => [label, roundNumber(state.lastFeatures.scores[key] ?? 0, 4)]),
     ),
-    moves: state.lastProfile.moves,
-    dexEntry: state.lastProfile.dex.text,
+    기술: state.lastProfile.moves,
+    도감설명: state.lastProfile.dex.text,
+    이유: state.lastProfile.typeResult.reasons,
   };
 
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
-  const safeName = state.lastProfile.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   link.href = url;
-  link.download = `${safeName || 'pokesona-profile'}.json`;
+  link.download = `포켓몬-프로필-${Date.now()}.json`;
   document.body.appendChild(link);
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
-  setStatus('Profile JSON downloaded.', false);
+  setStatus('프로필 JSON을 저장했습니다.', false);
 });
 
 function renderProfile(profile, features, typeCatalog) {
   resultPlaceholder.hidden = true;
   resultContent.hidden = false;
 
-  speciesName.textContent = profile.name;
   bstValue.textContent = profile.stats.total;
   dexEntry.textContent = profile.dex.text;
-  archetypeText.textContent = `${profile.stats.archetype} archetype`;
+  archetypeText.textContent = `${profile.stats.archetype}`;
 
   typeBadges.innerHTML = '';
   profile.typeResult.selected.forEach((typeName) => {
     const data = typeCatalog.find((item) => item.name === typeName);
     const badge = document.createElement('span');
     badge.className = 'type-badge';
-    badge.textContent = typeName;
+    badge.textContent = translateTypeName(typeName);
     badge.style.background = data?.color ?? '#666';
     typeBadges.appendChild(badge);
   });
@@ -268,7 +254,7 @@ function renderProfile(profile, features, typeCatalog) {
   abilityBox.innerHTML = '';
   const abilityPill = document.createElement('span');
   abilityPill.className = 'ability-pill';
-  abilityPill.textContent = `${profile.ability.name} — ${profile.ability.description}`;
+  abilityPill.textContent = `${profile.ability.name} · ${profile.ability.description}`;
   abilityBox.appendChild(abilityPill);
 
   traitChips.innerHTML = '';
@@ -306,32 +292,7 @@ function renderProfile(profile, features, typeCatalog) {
     moveChips.appendChild(chip);
   });
 
-  renderTypeRanking(profile.typeResult, typeCatalog);
   renderMetrics(features.scores);
-}
-
-function renderTypeRanking(typeResult, typeCatalog) {
-  typeAffinityList.innerHTML = '';
-  const typeLookup = new Map(typeCatalog.map((type) => [type.name, type]));
-  const topScore = Math.max(typeResult.ranked[0]?.[1] ?? 1, 0.0001);
-
-  typeResult.ranked.forEach(([typeName, score], index) => {
-    const percent = Math.max(4, (score / topScore) * 100);
-    const color = typeLookup.get(typeName)?.color ?? '#666';
-    const row = document.createElement('div');
-    row.className = 'affinity-row';
-    row.innerHTML = `
-      <div class="affinity-label-wrap">
-        <span class="affinity-rank">#${index + 1}</span>
-        <span class="affinity-name">${typeName}</span>
-      </div>
-      <div class="affinity-bar">
-        <span style="width:${percent}%; background:${color}"></span>
-      </div>
-      <span class="affinity-value">${Math.round(percent)}%</span>
-    `;
-    typeAffinityList.appendChild(row);
-  });
 }
 
 function renderMetrics(scores) {
@@ -354,17 +315,17 @@ function renderMetrics(scores) {
 
 function buildTextSummary(profile, features) {
   return [
-    `${profile.name} — Pokésona Summary`,
-    `Types: ${profile.typeResult.selected.join(' / ')}`,
-    `Ability: ${profile.ability.name}`,
-    `Archetype: ${profile.stats.archetype}`,
-    `Base Stats: ${Object.entries(profile.stats.values)
+    '포켓몬 얼굴 프로필 요약',
+    `타입: ${profile.typeResult.selected.map(translateTypeName).join(' / ')}`,
+    `특성: ${profile.ability.name}`,
+    `전투 성향: ${profile.stats.archetype}`,
+    `종족값: ${Object.entries(profile.stats.values)
       .map(([key, value]) => `${formatStatName(key)} ${value}`)
       .join(', ')}`,
-    `Traits: ${features.traitLabels.join(', ')}`,
-    `Moves: ${profile.moves.join(', ')}`,
-    `Dex Entry: ${profile.dex.text}`,
-  ].join('\n');
+    `분위기 태그: ${features.traitLabels.join(', ')}`,
+    `기술: ${profile.moves.join(', ')}`,
+    `도감 설명: ${profile.dex.text}`,
+  ].join('');
 }
 
 function roundNumber(value, digits = 2) {
@@ -372,14 +333,18 @@ function roundNumber(value, digits = 2) {
   return Math.round(value * factor) / factor;
 }
 
+function translateTypeName(typeName) {
+  return TYPE_LABELS[typeName] ?? typeName;
+}
+
 function formatStatName(key) {
   const map = {
     hp: 'HP',
-    attack: 'ATK',
-    defense: 'DEF',
-    spAttack: 'SpA',
-    spDefense: 'SpD',
-    speed: 'SPD',
+    attack: '공격',
+    defense: '방어',
+    spAttack: '특수공격',
+    spDefense: '특수방어',
+    speed: '스피드',
   };
   return map[key] ?? key;
 }
@@ -433,7 +398,6 @@ function clearResults() {
   state.lastProfile = null;
   resultPlaceholder.hidden = false;
   resultContent.hidden = true;
-  resultPlaceholder.textContent = 'Your generated profile will appear here after analysis.';
-  typeAffinityList.innerHTML = '';
+  resultPlaceholder.textContent = '분석이 끝나면 여기에 결과가 표시됩니다.';
   metricGrid.innerHTML = '';
 }

@@ -1,113 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokésona Face Generator</title>
+    <title>포켓몬 얼굴 프로필 생성기</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="page-shell">
       <header class="hero">
-        <p class="eyebrow">Browser-only AI-inspired demo</p>
-        <h1>Pokésona Face Generator</h1>
+        <p class="eyebrow">브라우저에서 실행되는 얼굴 분석 데모</p>
+        <h1>포켓몬 얼굴 프로필 생성기</h1>
         <p class="hero-copy">
-          Upload a face photo, extract facial landmarks in the browser, and generate a
-          full monster profile with 18 possible elemental types, an ability, base stats,
-          a dex entry, and learnable moves.
+          얼굴 사진을 올리면 브라우저에서 얼굴 특징을 분석해 타입, 특성, 종족값,
+          도감 설명, 기술까지 한 번에 생성해 줍니다.
         </p>
       </header>
 
       <main class="layout">
         <section class="panel controls-panel">
           <div class="panel-header">
-            <h2>1. Upload a face photo</h2>
-            <span class="badge">GitHub Pages friendly</span>
+            <h2>1. 얼굴 사진 업로드</h2>
+            <span class="badge">웹 배포 가능</span>
           </div>
 
           <label class="upload-zone" for="imageInput">
             <input id="imageInput" type="file" accept="image/*" />
-            <span class="upload-title">Choose an image</span>
+            <span class="upload-title">이미지 선택</span>
             <span class="upload-subtitle">
-              Best results: one clear front-facing face, medium close-up, good lighting.
+              정면에 가깝고 얼굴이 잘 보이는 사진이 가장 잘 분석됩니다.
             </span>
           </label>
 
           <div class="preview-wrap">
-            <img id="previewImage" alt="Uploaded preview" hidden />
+            <img id="previewImage" alt="업로드한 이미지 미리보기" hidden />
             <canvas id="overlayCanvas" hidden></canvas>
-            <div id="emptyPreview" class="empty-preview">Image preview will appear here.</div>
+            <div id="emptyPreview" class="empty-preview">여기에 이미지 미리보기가 표시됩니다.</div>
           </div>
 
           <div class="actions">
-            <button id="analyzeButton" class="primary-btn" disabled>Analyze face</button>
-            <button id="rerollButton" class="secondary-btn" disabled>Reroll flavor text</button>
+            <button id="analyzeButton" class="primary-btn" disabled>얼굴 분석하기</button>
+            <button id="rerollButton" class="secondary-btn" disabled>설명 다시 생성</button>
           </div>
 
           <div class="actions utility-actions">
-            <button id="copySummaryButton" class="secondary-btn" disabled>Copy summary</button>
-            <button id="downloadProfileButton" class="secondary-btn" disabled>Download profile JSON</button>
+            <button id="copySummaryButton" class="secondary-btn" disabled>요약 복사</button>
+            <button id="downloadProfileButton" class="secondary-btn" disabled>프로필 JSON 저장</button>
           </div>
 
           <div id="statusMessage" class="status-message">
-            Load an image to begin.
+            이미지를 올리면 시작할 수 있습니다.
           </div>
         </section>
 
         <section class="panel result-panel">
           <div class="panel-header">
-            <h2>2. Generated profile</h2>
-            <span id="modelStatus" class="badge muted">Model not loaded</span>
+            <h2>2. 생성 결과</h2>
+            <span id="modelStatus" class="badge muted">모델 로딩 전</span>
           </div>
 
           <div id="resultPlaceholder" class="result-placeholder">
-            Your generated profile will appear here after analysis.
+            분석이 끝나면 여기에 결과가 표시됩니다.
           </div>
 
           <div id="resultContent" class="result-content" hidden>
             <section class="monster-card">
               <div class="monster-card__header">
-                <div>
-                  <p class="label">Generated species</p>
-                  <h3 id="speciesName">—</h3>
-                </div>
-                <div class="bst-wrap">
-                  <p class="label">Base stat total</p>
+                <div class="bst-wrap bst-wrap--left">
+                  <p class="label">종족값 합계</p>
                   <p id="bstValue" class="bst-value">000</p>
                 </div>
               </div>
 
               <div class="type-row">
                 <div>
-                  <p class="label">Type</p>
+                  <p class="label">타입</p>
                   <div id="typeBadges" class="type-badges"></div>
                 </div>
                 <div>
-                  <p class="label">Ability</p>
+                  <p class="label">특성</p>
                   <div id="abilityBox" class="ability-box"></div>
                 </div>
               </div>
 
               <div>
-                <p class="label">Pokédex entry</p>
+                <p class="label">도감 설명</p>
                 <p id="dexEntry" class="dex-entry">—</p>
               </div>
             </section>
 
             <section class="insight-grid">
               <div class="sub-panel">
-                <h4>Detected vibe</h4>
+                <h4>분위기 태그</h4>
                 <div id="traitChips" class="chips"></div>
               </div>
               <div class="sub-panel">
-                <h4>Why this result?</h4>
+                <h4>선정 이유</h4>
                 <ul id="reasonList" class="reason-list"></ul>
               </div>
             </section>
 
             <section class="sub-panel">
               <div class="sub-panel__header">
-                <h4>Base stats</h4>
+                <h4>종족값</h4>
                 <p id="archetypeText" class="subtle">—</p>
               </div>
               <div id="statRows" class="stats"></div>
@@ -115,28 +110,18 @@
 
             <section class="sub-panel">
               <div class="sub-panel__header">
-                <h4>Learnable moves</h4>
-                <p class="subtle">Generated from type + vibe tags</p>
+                <h4>배울 수 있는 기술</h4>
+                
               </div>
               <div id="moveChips" class="chips"></div>
             </section>
 
-            <section class="insight-grid detail-grid">
-              <section class="sub-panel">
-                <div class="sub-panel__header">
-                  <h4>18-type affinity ranking</h4>
-                  <p class="subtle">Relative score vs. the strongest match</p>
-                </div>
-                <div id="typeAffinityList" class="affinity-list"></div>
-              </section>
-
-              <section class="sub-panel">
-                <div class="sub-panel__header">
-                  <h4>Face analysis metrics</h4>
-                  <p class="subtle">Normalized from landmark + blendshape cues</p>
-                </div>
-                <div id="metricGrid" class="metric-grid"></div>
-              </section>
+            <section class="sub-panel">
+              <div class="sub-panel__header">
+                <h4>얼굴 분석 지표</h4>
+                <p class="subtle">랜드마크와 표정 수치를 바탕으로 계산한 값</p>
+              </div>
+              <div id="metricGrid" class="metric-grid"></div>
             </section>
           </div>
         </section>

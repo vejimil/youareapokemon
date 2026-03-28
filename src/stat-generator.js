@@ -7,26 +7,26 @@ function buildArchetype(features, typeResult) {
   const types = typeResult.selected;
 
   if (s.energy > 0.64 && (types.includes('Electric') || types.includes('Flying'))) {
-    return 'Agile Special Attacker';
+    return '고속 특수형';
   }
 
   if (s.intensity > 0.62 && (types.includes('Fighting') || types.includes('Dark') || types.includes('Fire'))) {
-    return 'Aggressive Mixed Attacker';
+    return '공격적 쌍두형';
   }
 
   if (s.elegance > 0.62 && (types.includes('Psychic') || types.includes('Fairy') || types.includes('Dragon'))) {
-    return 'Refined Special Attacker';
+    return '정제된 특수형';
   }
 
   if (types.includes('Steel') || types.includes('Rock') || types.includes('Ground')) {
-    return 'Bulky Tank';
+    return '내구 탱커형';
   }
 
   if (s.smile > 0.54 || types.includes('Grass') || types.includes('Water')) {
-    return 'Support Specialist';
+    return '서포트형';
   }
 
-  return 'Balanced Combatant';
+  return '밸런스형';
 }
 
 function typeModifiers(types) {
@@ -138,12 +138,12 @@ export function generateStats({ features, typeResult }) {
   };
 
   const archetypeMods = {
-    'Agile Special Attacker': { hp: -8, attack: -8, defense: -8, spAttack: 24, spDefense: 4, speed: 26 },
-    'Aggressive Mixed Attacker': { hp: 4, attack: 22, defense: -4, spAttack: 14, spDefense: -6, speed: 14 },
-    'Refined Special Attacker': { hp: -4, attack: -10, defense: 0, spAttack: 26, spDefense: 14, speed: 12 },
-    'Bulky Tank': { hp: 18, attack: 8, defense: 24, spAttack: -8, spDefense: 16, speed: -20 },
-    'Support Specialist': { hp: 10, attack: -10, defense: 8, spAttack: 12, spDefense: 18, speed: 2 },
-    'Balanced Combatant': { hp: 8, attack: 8, defense: 8, spAttack: 8, spDefense: 8, speed: 8 },
+    '고속 특수형': { hp: -8, attack: -8, defense: -8, spAttack: 24, spDefense: 4, speed: 26 },
+    '공격적 쌍두형': { hp: 4, attack: 22, defense: -4, spAttack: 14, spDefense: -6, speed: 14 },
+    '정제된 특수형': { hp: -4, attack: -10, defense: 0, spAttack: 26, spDefense: 14, speed: 12 },
+    '내구 탱커형': { hp: 18, attack: 8, defense: 24, spAttack: -8, spDefense: 16, speed: -20 },
+    '서포트형': { hp: 10, attack: -10, defense: 8, spAttack: 12, spDefense: 18, speed: 2 },
+    '밸런스형': { hp: 8, attack: 8, defense: 8, spAttack: 8, spDefense: 8, speed: 8 },
   };
 
   const vibeMods = {
